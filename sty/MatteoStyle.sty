@@ -1,0 +1,151 @@
+\ProvidesPackage{mystyle}
+
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.3}
+
+\setlength{\tabcolsep}{3.5pt}
+
+% Setting international fonts.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setmainfont[Ligatures=TeX]{Linux Libertine O}
+
+
+% Document settings
+\usepackage[page]{appendix}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{subfig}
+%\usepackage{graphicx}
+%\usepackage{caption}
+%\usepackage{subcaption}
+
+% Cooperation rendered2 easy
+\usepackage{todonotes}
+
+
+% Mathy stuff
+\usepackage{amssymb} 
+\usepackage{amsmath} 
+\usepackage{amsthm}  
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+
+
+
+% Making fancy listings
+\usepackage{enumitem}
+	\newlist{assumption}{enumerate}{1}
+	\setlist[assumption,1]{label=\textcolor{brownie}{Assumption No. \arabic*}}
+
+	\newlist{strategy}{enumerate}{1}
+	\setlist[strategy,1]{label=\textcolor{adriatico}{Strategy No. \arabic*}}
+
+	\newlist{problem}{enumerate}{1}
+	\setlist[problem,1]{label=\textcolor{adriatico}{Problem No. \arabic*}}
+
+	\newlist{algo}{enumerate}{1}
+	\setlist[algo,1]{label=\textcolor{adriatico}{Step \arabic*}}
+
+	\newlist{goal}{enumerate}{2}
+	\setlist[goal,1]{label=\textcolor{adriatico}{Objective No. \arabic*}}
+	\setlist[goal,2]{label=\textcolor{adriatico}{Goal \roman*}}
+
+	\newlist{rationale}{enumerate}{1}
+	\setlist[rationale,1]{label=\textcolor{adriatico}{Rationale No. \arabic*}}
+
+% The nice simple tree graphs.
+	% \usepackage{tikz}
+	% \usetikzlibrary{matrix}
+
+
+% Using colors
+\usepackage{color}
+	\definecolor{adriatico}{rgb}{.2,.40,.90}
+	\definecolor{red2}{rgb}{.8,.3,.1}
+	\definecolor{green2}{rgb}{.2,.8,.1}
+	\definecolor{brownie}{rgb}{.174,.104,.43}
+
+% Writing down chemical reactions.
+\usepackage[version=3]{mhchem}
+% Using chemistry in math.
+\newcommand{\cheMat}[2]{\text{\ce{^{#2}{#1}}}}
+\newcommand{\cem}[1]{\text{\ce{#1}}}
+
+
+% \newtheorem{mydef}{Definicja}[section]
+% \newtheorem{mytheo}{Twierdzenie}[section]
+
+\newcommand{\normal}[2]{\mathcal{N}(#1, #2)}
+\newcommand{\Normal}[2]{\mathcal{N}\Big(#1, #2\Big)}
+
+
+\newcommand{\molecule}{\ce{C_c H_h O_o N_n S_s}}
+\newcommand{\moleculeIsotopic}{$
+	\cem{^{12}C}_\cem{c_0} 	\, \cem{^{13}C}_\cem{c_1} 	\,
+	\cem{^{1}H}_\cem{h_0} 	\, \cem{^{2}H}_\cem{h_1} 	\,
+	\cem{^{14}N}_\cem{n_0} 	\, \cem{^{15}N}_\cem{n_1}	\, 
+	\cem{^{16}O}_\cem{o_0} 	\, \cem{^{17}O}_\cem{o_1} 	\, \cem{^{18}O}_\cem{o_2} 	\,
+	\cem{^{32}S}_\cem{s_0} 	\, \cem{^{33}S}_\cem{s_1} 	\, \cem{^{34}S}_\cem{s_2} 	\, \cem{^{36}S}_\cem{s_4} 	
+$}
+\newcommand{\heavyMoleculeIsotopic}{$
+	\cem{^{13}C}_\cem{c_1} 	\,
+	\cem{^{2}H}_\cem{h_1} 	\,
+	\cem{^{15}N}_\cem{n_1}	\, 
+	\cem{^{17}O}_\cem{o_1} 	\, \cem{^{18}O}_\cem{o_2} 	\,
+	\cem{^{33}S}_\cem{s_1} 	\, \cem{^{34}S}_\cem{s_2} 	\, \cem{^{36}S}_\cem{s_4} 	
+$}
+
+\newcommand{\ind}[1]{\mathbb{I}_{ #1 }}
+\newcommand{\indA}[1]{\mathbb{I}_{\{ A = #1 \}}}
+\newcommand{\indAA}[2]{\mathbb{I}_{\{ A_{#1} = #2 \}}}
+
+\newcommand{\aaa}{\mathbb{A}}
+\newcommand{\sss}{\mathbb{S}}
+\newcommand{\xxx}{\mathbb{X}}
+\newcommand{\iii}{\mathbb{I}}
+\newcommand{\nnn}{\mathbb{N}}
+\newcommand{\ppp}{\mathbb{P}}
+\newcommand{\sprod}[2]{\langle #1|#2 \rangle}
+
+
+\newcommand{\yy}{\mathfrak{y}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\tran}{\mathrm{t}}
+\newcommand{\nn}{\mathrm{N}}
+\newcommand{\kk}{\mathrm{K}}
+\newcommand{\mm}{\mathrm{M}}
+\newcommand{\ii}{\mathrm{I}}
+\newcommand{\jj}{\mathrm{J}}
+
+\newcommand{\integer}{\mathbb{N}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\prob}{\mathbb{P}}	
+\newcommand{\expect}{\mathcal{E}}
+\newcommand{\cov}{\mathcal{COV}}
+\newcommand{\var}{\mathcal{D}^2}
+
+\newcommand{\fracc}[2]{\Big( {#1 \over #2} \Big)}
+\newcommand{\tip}{\fbox{\textcolor{red2}{Wskazówka}}\,\,\,}
+\newcommand{\dbar}[1]{\overline{\overline{ #1}}}	
+
+
+% Simple shortcuts
+
+%\numberwithin{equation}{section}
+%\numberwithin{figure}{section}
+
+\newcommand{\Number}{$\text{N}^\text{o}$}
+
+
+
+\newcommand{\poi}[2]{e^{-\lambda_{#1}} \frac{\lambda_{#1}^{#2}}{{#2}!}}
+\newcommand{\pois}[2]{e^{-{#1}} \frac{{#1}^{#2}}{{#2}!}}
