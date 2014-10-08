@@ -30,6 +30,7 @@
 \newcommand{\cem}[1]{\text{\ce{#1}}}
 \newcommand{\cheMat}[2]{\text{\ce{^{#2}{#1}}}}
 
+\newcommand{\smallMolecule}{\ce{C_c H_h N_n}}
 \newcommand{\molecule}{\ce{C_c H_h O_o N_n S_s}}
 \newcommand{\moleculeIsotopic}{$
 	\cem{^{12}C}_\cem{c_0} 	\, \cem{^{13}C}_\cem{c_1} 	\,
@@ -47,3 +48,10 @@ $}
 $}
 
 \newcommand{\prob}{\mathbb{P}}	
+\newcommand{\poi}[2]{e^{-\lambda_{#1}} \frac{\lambda_{#1}^{#2}}{{#2}!}}
+
+\newcommand{\poiss}[3]{
+	\frac{ \lambda_\cem{^{#2}\text{\uppercase{#1}}}^{\cem{\text{\lowercase{#1}}}_{#3}} }{ \cem{\text{\lowercase{#1}}}_{#3} !}	
+}
+
+\newtheorem{result}{Result}

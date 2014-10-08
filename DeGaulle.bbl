@@ -2,6 +2,12 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
+\bibitem{Bobkov1998OnModifiedLogarithmicSobolev}
+Bobkov, S., Ledoux, M.: On modified logarithmic sobolev inequalities for
+  bernoulli and poisson measures. Journal of Functional Analysis  156(2),  347
+  -- 365 (1998),
+  \url{http://www.sciencedirect.com/science/article/pii/S0022123697931876}
+
 \bibitem{Breen2000AutomaticPeak}
 Breen, E.J., Hopwood, F.G., Williams, K.L., Wilkins, M.R.: Automatic poisson
   peak harvesting for high throughput protein identification. Electrophoresis

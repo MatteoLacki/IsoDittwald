@@ -111,15 +111,33 @@ Another question worth addressing what should be chosen for $n$, while applying 
 We infer $n$'s from that relationship while using Lemma \ref{weak convergence of multinomial to Poissons lemma} for peptides and proteins.
 
 
-Finally, in the approximation we {\it calibrate} $\lambda$'s setting them to be equal to average numbers of isotopes using original {\it full distribution} \eqref{product of multinomials}. 
-
-This is done in contrast to the {\it fitting} approach used in \cite{Breen2000AutomaticPeak,Valkenborg2007UsingPoisson}, where the mean of the approximation is used as a free parameter in an optimisation problem. These two solutions should not differ too much for larger compounds.
+Finally, in the approximation we {\it calibrate} $\lambda$'s setting them to be equal to average numbers of isotopes using original {\it full distribution} \eqref{product of multinomials}. For instance, for carbon we set $\lambda_\cem{^{13}C} \approx \cem{c} \times \prob( \cem{^{13}C} )$. This is in contrast to the {\it fitting} approach used in \cite{Breen2000AutomaticPeak,Valkenborg2007UsingPoisson}, where the means of the approximation are free parameter in an optimisation scheme. These two solutions should not differ too much for larger compounds, for it is known that both the Poisson and Multinomial distributions are concentrated near their modes, see \cite{Bobkov1998OnModifiedLogarithmicSobolev}.
 
 
+Hence, the probability that we assign to reduced configuration \eqref{short chemical formula} is equal to 
+\begin{equation}
+	\poiss{\text{c}}{13}{1}
+	\poiss{\text{h}}{2}{1}
+	\poiss{\text{n}}{15}{1}
+	\poiss{\text{o}}{17}{1}
+	\poiss{\text{s}}{33}{1}
+		e^{ - \mu}
+	\poiss{\text{o}}{18}{2}	
+	\poiss{\text{s}}{34}{2}
+		e^{ - \eta }		
+	\poiss{\text{s}}{36}{1}
+		e^{ - \gamma }
+\end{equation}
+where 
+\begin{align*}\label{intensities summed equation}
+	\mu 	&=	\lambda_\cem{^{13}C} + \lambda_\cem{^{2}H} + \lambda_\cem{^{15}N} + \lambda_\cem{^{17}O} +\lambda_\cem{^{33}S}  	\\
+	\eta 	&= 	\lambda_\cem{^{18}O} + \lambda_\cem{^{34}S}\\ 
+	\gamma	&= 	\lambda_\cem{^{36}S}.
+\end{align*}
 
-
+The usefulness of approximation by a product of independent Poisson lies closed formula expression one obtains while conditioning. 
 \begin{lemma}\label{Poisson conditional on sum of Poissons}
-	Suppose we have a collection of $m$ independent Poisson-distributed random variables, $X_i \sim Poiss(\mu_i)$. Then $X_1, \dots, X_m$ given that $X_1 + \dots + X_m = K$ is multinomially distributed,
+	Suppose we have a collection of $m$ independent Poisson-distributed random variables, $X_i \sim \mathrm{Poiss}(\mu_i)$. Then $X_1, \dots, X_m$ given that $X_1 + \dots + X_m = K$ is multinomially distributed,
 
 $$ 
 	\Big(X_1, \dots, X_m | X_1 + \dots + X_m = K \Big) 
@@ -131,4 +149,83 @@ $$
 Proof might be found in \cite{Kingman1993PoissonProcesses}. 
 
 
-It is valuable to see, how Lemma \ref{Poisson conditional on sum of Poissons} generalizes while conditioning on {\it localised fine structure} constraints.
+Suppose that we concentrated on molecule composed of elements that have only one additional neutron, e.g. \smallMolecule. Then, following Lemma \ref{Poisson conditional on sum of Poissons}, the approximative distribution of the {\it localised fine structure} given that we restricted our attention only to configurations with $K$ extra neutrons would simply be 
+\begin{equation}\label{Simple Multinomial Eq}
+	\mathrm{Multi}\left(\frac{\lambda_\cem{^{13}C}}{\mu}, \frac{\lambda_\cem{^{2}H}}{\mu}, \frac{\lambda_\cem{^{15}N}}{\mu}; \cem{c} + \cem{h} + \cem{n} \right).	
+\end{equation}
+
+
+However, it is not yet clear why should it be true that we can approximate the {\it localised fine structure law} by the Poisson approximation conditional on the set of configurations with the same total number of extra neutrons. What remains to be shown is why the conditioning does not preclude convergence in distribution. This, however, can be easily proved.
+
+
+\begin{lemma}\label{conditional convergence lemma}
+	Let $\mu^{[n]}, \mu$ be discrete measures. If $\mu^{[n]}$ converges in distribution to $\mu$ and an event $A$ has non zero probability under any of that measures, $\underset{n}{\forall} \mu^{[n]}(A)\,,\, \mu(A) > 0$, then measures condtional on $A$, $\mu^{[n]}_A = \frac{\mu^{[n]}}{\mu^{[n]}(A)}$ converge in distribution to $\mu_A = \frac{ \mu }{ \mu(A) }$.
+\end{lemma}  
+The proof is to be found in the appendix. 
+
+
+In our case, $\mu^{[n]}_A$ is the projection of {\it full distribution} onto the space of reduced configurations, conditioned on the set $A = \left\{ ( \cem{c}_1, \cem{h}_1, \cem{n}_1 ) :  \cem{c}_1 + \cem{h}_1 + \cem{n}_1 = K\right\}$. That would get approximated by \eqref{Simple Multinomial Eq}. Observe that in probabilistic notation
+$$ A =  \left\{ \cem{^{13}C} + \cem{^2H} + \cem{^{15}N} = K \right\}.$$  
+
+
+It is valuable to see, how Lemma \ref{Poisson conditional on sum of Poissons} generalizes while conditioning on a particular {\it localised fine structure} when the compound is composed out of elements with multiple isotopes. The problem is that the set of configurations with a fixed number of extra neutrons corresponds to a different Diophantine equation\todo{Be sure that the concept of Diophantine equation is introduced.}: namely the condition defining $A$ might be like \eqref{Simple Diophantine Equation}. The Poisson approximation simplifies the calculations of probability assigned to set $A$. It stems from the following
+
+
+\begin{lemma}\label{sum of independent Poissons lemma}
+	Suppose we have a collection of $m$ independent Poisson-distributed random variables, $X_i \sim \mathrm{Poiss}(\mu_i)$. Then $X_1 + \dots + X_m \sim \mathrm{Poiss}(\mu_1 + \dots + \mu_m)$. 
+\end{lemma}  
+The proof can be found in \cite{Kingman1993PoissonProcesses}. 
+
+
+Note that $A$ can be described by sums of three different Poisson variables instead of eight:
+\begin{equation}\label{setA}
+	A = \Big\{ \underbrace{\cem{^{13}C} + \cem{^2H} + \cem{^{15}N} + \cem{^{17}O} + \cem{^{33}S}}_{ G_1 } + 2 \times \underbrace{( \cem{^{18}O} + \cem{^{34}S} )}_{ G_2 } + 4 \times \underbrace{\cem{^{36}S}}_{ G_4 } = K \Big\}.	
+\end{equation}
+where $G_1 \sim \mathrm{Poiss}(\mu)$, $G_2 \sim \mathrm{Poiss}(\mu)$, and $G_4 \sim \mathrm{Poiss}(\mu)$. There is a strict link between random variables $G_i$ and the concept of equatransneutronic groups described in \cite{Olson2009Calculations}: it is equal to the total number of atoms in a compound bearing additional $i$ neutrons. Also, let us define three numbers
+\begin{align*}
+	x 	& = \cem{c_1} + \cem{h_1} + \cem{n_1} + \cem{o_1} + \cem{s_1}, \\	  	
+	y 	& = \cem{o_2} + \cem{s_2}, 	\\
+	z 	& = \cem{s_4}.
+\end{align*}
+In \cite{Olson2009Calculations} they are encoded by $k_1, k_2$, and $k_4$; also, $d_{G_i} = i$. Then it is true that
+
+\begin{result}\label{Fine structure law}
+	The approximative \emph{fine structure law} with $K$ additional neutrons for \molecule\, is equal to 
+	\begin{equation*}
+	\mathrm{Multi} \left(
+		x;
+		\frac{ \lambda_\cem{^{13}C} }{ \mu }, 
+		\frac{ \lambda_\cem{^{2} H} }{ \mu }, 
+		\frac{ \lambda_\cem{^{15}N} }{ \mu },
+		\frac{ \lambda_\cem{^{17}O} }{ \mu }, 
+		\frac{ \lambda_\cem{^{33}S} }{  \mu} 
+	\right ) \otimes
+	\mathrm{Multi} \left(
+		y;	
+		\frac{ \lambda_\cem{^{18}O} }{ \eta },
+		\frac{ \lambda_\cem{^{34}S} }{ \eta } 
+	\right) \otimes 
+	\mathbb{L}( x, y, z ),
+\end{equation*}
+	where 
+	\begin{equation}\label{equatransneutronic distribution}
+		\mathbb{L}( x, y , z) = 
+		\frac{ \frac{ \mu^x }{ x! } \frac{ \eta^y}{ y! } \frac{ \gamma^z}{z!} }{ 
+			\underset{ x' + 2 y' + 4 z' = K}{\sum} 
+				\frac{ \mu^{x'} }{ x'! } 
+				\frac{ \eta^{y'}}{ y'! } 
+				\frac{ \gamma^{z'}}{z'!}
+		}.
+	\end{equation}
+\end{result}
+Thus, Result \ref{Fine structure law} also provides us with \eqref{equatransneutronic distribution} -- a natural distribution on the {\it equatransneutronic configurations}. In general, the elements forming a chemical compound may have different numbers of extra neutrons than $I = \{ 1, 2, 4\}$. For a general set $I$ formula \eqref{equatransneutronic distribution} generalizes to 
+\begin{equation*}
+	\mathbb{L}( k ) = 
+	\frac{ 
+		\prod_{i \in I} \frac{ \mu_i^{k_i} }{ {k_i}! } 
+	}{ 
+		\underset{ \{ k :  \sum_{i \in I} i k_i^*  = K \} }{\sum} 	
+		\prod_{i \in I} \frac{ \mu_i^{k_i^*} }{ {k_i^*}! }	
+	},
+\end{equation*}
+where $k$ is an ordered tuple indexed by $I$. Observe, that in nature at most $\# I \leq 10$, which poses a limit on the complexity of calculating all the values of $\mathbb{L}$. We call $\mathbb{L}$ the {\it lucky distribution} and note, that is is equivalent to conditioning $\#I$ independent Poisson distributions with different parameters on the set of solutions to Diophantine equation $\sum_{i \in I} i k_i^*  = K$.
