@@ -6,12 +6,44 @@
 \usepackage{todonotes}
 
 \usepackage[T1]{fontenc}
-\setcounter{tocdepth}{3}
+	\setcounter{tocdepth}{3}
 \usepackage{graphicx}
 
-
+% \usepackage{subfig}
+\usepackage{multirow}
+%\usepackage{caption}
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{3.5pt}
 
 % Mathy stuff
 \usepackage{amssymb}
 % \usepackage{amsmath} # DOES NOT FUCKING WORK LITTLE BUGGER
 % \usepackage{amsthm}  # DOES NOT FUCKING WORK LITTLE BUGGER
+
+
+	% Writing down chemical reactions.
+\usepackage[version=3]{mhchem}
+
+	
+	% Using chemistry in math.\newcommand{\cheMat}[2]{\text{\ce{^{#2}{#1}}}}
+\newcommand{\cem}[1]{\text{\ce{#1}}}
+\newcommand{\cheMat}[2]{\text{\ce{^{#2}{#1}}}}
+
+\newcommand{\molecule}{\ce{C_c H_h O_o N_n S_s}}
+\newcommand{\moleculeIsotopic}{$
+	\cem{^{12}C}_\cem{c_0} 	\, \cem{^{13}C}_\cem{c_1} 	\,
+	\cem{^{1}H}_\cem{h_0} 	\, \cem{^{2}H}_\cem{h_1} 	\,
+	\cem{^{14}N}_\cem{n_0} 	\, \cem{^{15}N}_\cem{n_1}	\, 
+	\cem{^{16}O}_\cem{o_0} 	\, \cem{^{17}O}_\cem{o_1} 	\, \cem{^{18}O}_\cem{o_2} 	\,
+	\cem{^{32}S}_\cem{s_0} 	\, \cem{^{33}S}_\cem{s_1} 	\, \cem{^{34}S}_\cem{s_2} 	\, \cem{^{36}S}_\cem{s_4} 	
+$}
+\newcommand{\heavyMoleculeIsotopic}{$
+	\cem{^{13}C}_\cem{c_1} 	\,
+	\cem{^{2}H}_\cem{h_1} 	\,
+	\cem{^{15}N}_\cem{n_1}	\, 
+	\cem{^{17}O}_\cem{o_1} 	\, \cem{^{18}O}_\cem{o_2} 	\,
+	\cem{^{33}S}_\cem{s_1} 	\, \cem{^{34}S}_\cem{s_2} 	\, \cem{^{36}S}_\cem{s_4} 	
+$}
+
+\newcommand{\prob}{\mathbb{P}}	

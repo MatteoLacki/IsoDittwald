@@ -1,0 +1,134 @@
+%!TEX root = ../DeGaulle.tex
+\section{Approximations}
+
+	By an isotopic configuration we understand information about the number of different isotopes in the sample. For the purpose of simplicity, we focus on configurations of chemical compounds made out of carbon, hydrogen, nitrogen, oxygen, and sulfur, i.e. compounds with empirical formulas like \molecule. We underline that in general analysis is not constrained only to these elements. Observe however, that one already encompasses compounds like peptides and proteins. An isotopic configuration can be represented by an extended empirical formula 
+\begin{equation}\label{long chemical formula}
+	\text{\moleculeIsotopic}.
+\end{equation}
+
+In the above representation, small letters with indices represent counts of different atoms with indices displaying the number of additional neutrons an isotope has with respect to the lighest possible isotopic variant. 
+Observe that $\cem{c} = \cem{c_0} + \cem{c_1}$, $\cem{h} = \cem{h_0} + \cem{h_1}$, and so on, where $\cem{c}, \cem{h}, \dots$, are atom numbers from the empirical formula \molecule. The left superscripts of big letters represent atomic numbers of different elements. The probability of such a variant is usually assumed to be a product of independent multinomial distributions
+{\small\begin{equation}\label{product of multinomials}
+	\cem{M} = \mathrm{Multi} \Big( \prob(\cem{^{12}C}), \prob(\cem{^{13}C}); c \Big)
+	\otimes \dots \otimes 
+	\mathrm{Multi} \Big( \prob(\cem{^{32}S}), \prob(\cem{^{33}S}), \prob(\cem{^{34}S}), \prob(\cem{^{36}S}); s \Big),	
+\end{equation}}
+where the probabilities of observing particular isotopes, $\prob(\cem{^{12}C})$, \dots, $\prob(\cem{^{36}S})$, are established in independent experiments\footnote{Consult Table \ref{basic info on isotopes table} for details.}. For instance, the probability of a given carbons configuration $(\cem{c_0}, \cem{c_1})$ equals
+\begin{equation*}
+	\mathrm{Multi} \left( \prob(\cem{^{12}C}), \prob(\cem{^{13}C}); c \right)
+		\Big( (\cem{c_0}, \cem{c_1}) \Big) = 
+	\begin{pmatrix}
+		\cem{c} \cr \cem{c_0}, \cem{c_1}  
+	\end{pmatrix} \prob(\cem{^{12}C})^\cem{c_0} \prob(\cem{^{13}C})^\cem{c_1}
+\end{equation*}
+and it should be multiplied by similar expression for hydrogen, nitrogen, oxygen and sulfur to obtain probability for expression like \eqref{long chemical formula}.
+
+
+
+\begin{table}[ht]
+	\centering
+	\caption{Basic Information on Stable Isotopes, as found in \cite{Rosman1997IsotopicCompositions}.}\label{basic info on isotopes table}
+	\begin{tabular}{lccll}
+		\toprule
+Element 	& Isotope 		& Extra Neutrons& Mass [Da] & Probability 	\\
+		\midrule
+\multirow{2}{*}{Carbon}  	
+			& \ce{^{12}C} 	& 0 			& 12 		& 0.9893 		\\	
+  			& \ce{^{13}C} 	& 1 			& 13.0033 	& 0.0107 		\\	
+  		\cmidrule(r){1-5}
+\multirow{2}{*}{Hydrogen}  	
+			& \ce{^1H} 		& 0 			& 1.0078 	& 0.999885 		\\	
+  			& \ce{^2H} 		& 1 			& 2.0141 	& 0.000115 		\\	
+  		\cmidrule(r){1-5}	
+\multirow{2}{*}{Nitrogen}  	
+			& \ce{^{14}N} 	& 0 			& 14.0031 	& 0.99632 		\\	
+  			& \ce{^{15}N}	& 1 			& 15.0001 	& 0.00368 		\\	  	  
+  		\cmidrule(r){1-5}	
+\multirow{3}{*}{Oxygen}  	
+			& \ce{^{16}O} 	& 0 			& 15.9949 	& 0.99757 		\\	
+  			& \ce{^{17}O}	& 1 			& 16.9991 	& 0.00038 		\\	  	  	
+  			& \ce{^{18}O}	& 2 			& 17.9992 	& 0.00205 		\\	  	  
+  		\cmidrule(r){1-5}	
+\multirow{4}{*}{Sulfur}  	
+			& \ce{^{32}S} 	& 0 			& 31.9721 	& 0.9493 		\\	
+  			& \ce{^{33}S}	& 1 			& 32.9714 	& 0.0076 		\\	  	  
+  			& \ce{^{34}S}	& 2 			& 33.9679 	& 0.0429 		\\
+  			& \ce{^{36}S}	& 4 			& 35.9671 	& 0.0002 		\\		
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+A {\it localised fine structure} with $K$ extra neutrons is simply a subset of all possible configurations \eqref{long chemical formula} with additional constraint 
+\begin{equation}\label{Simple Diophantine Equation}
+	\cem{c_1} + \cem{h_1} + \cem{n_1} + \cem{o_1} + 2 \cem{o_2} + \cem{s_1} + 2 \cem{s_2} + 4 \cem{s_4} = K.
+\end{equation}
+
+The main point of interest in the localised fine structure problem is how to efficiently derive a possibly short list of the most probable isotopic configurations that satisfy \eqref{Simple Diophantine Equation}. The number of extra neutrons, $K$, should take values between zero and $c + h + n + 2o + 4s$ -- the maximal number of extra neutrons a molecule with a fixed amount of elements can have. Numbers $2$ and $4$ are simply the maximal number of extra neutrons that oxygen and suflur can absorb respectively, see Table \ref{basic info on isotopes table}.
+
+
+We approximate the {\it full distribution} \eqref{product of multinomials} by a product of Poisson laws.
+	
+
+\begin{lemma}\label{weak convergence of multinomial to Poissons lemma}
+	Consider a multionomial distribution 
+$$ 
+	\mathrm{Multi}^{[n]}(r_0, r_1, \dots, r_w; n) = 
+	\begin{pmatrix}
+		n \cr r_0, r_1, \dots, r_w
+	\end{pmatrix} 
+	p_{0,n}^{r_0}  p_{1,n}^{r_1} \dots p_{w,n}^{r_w}.
+$$
+	If \,\,$\lim_{n\to \infty} n p_{k,n}= \lambda_k$ exist for $k=1,\dots, w$ then 
+\begin{equation}\label{weak convergence of multionial to Poissons equation}
+	\mathrm{Multi}^{[n]} \rightharpoonup \delta_\infty \otimes \mathrm{Poiss}( \lambda_1) \otimes \dots \otimes \mathrm{Poiss}( \lambda_w ),	
+\end{equation}
+	where $\delta_\infty$ is a measure concentrated on $\infty$ and $\mathrm{Poiss}$ is the Poisson distribution, 
+$$
+	\mathrm{Poiss}(\lambda)(k) 	= \frac{\lambda^k}{k!}e^{-\lambda}.
+$$
+\end{lemma}
+The proof is well known in the literature and we omit it\footnote{It makes part of common knowledge: mathematicians are more concerned about measuring the quality of this approximation, as in \cite{Roos1999OnTheRateOfMultivariatePoissonConvergence}.}. 
+
+
+Note that the approximation assumes that we enlarge the number of trials in the multinomial distribution to infinity. In the context of our model this would correspond to infinite enlargement of the compound so that only the lightest isotopes of differenet elements would appear infinitely often, other taking any finite value. Thus, the Poisson approximation enlarges the state space of the problem to configurations that are nonphysical. The interpretational shortcomings are overweighted however by the emerging independence of the numbers of isotope counts. 
+
+
+We tackle the problem of infinite numbres of lightest isotopes in the following way: we assume, that the configurations to which we can prescribe the approximative distributions are simply the counts of the heavier isotopes and call that a reduced configuration. In the example studied in this paper it amounts to
+\begin{equation}\label{short chemical formula}
+	\text{\heavyMoleculeIsotopic}.
+\end{equation}
+The reduction is a common approach to the problem; confront \cite{Feller1968IntroductionToProbability}. Observe, that for a reduced isotopic configuration the constraint \eqref{Simple Diophantine Equation} is still a valid one, being expressed only in terms of numbers of not the lightest isotopes. 
+
+
+Another question worth addressing what should be chosen for $n$, while applying Lemma \ref{weak convergence of multinomial to Poissons lemma}. It is an important question, since for cerain values $n$ the approximation works better. A detailed description of this phenomenon can be found in \cite{Roos1999OnTheRateOfMultivariatePoissonConvergence}. Since we approximate each multinomial distribution in \eqref{product of multinomials} it is natural to consider more than one value: one should look at the numbers of different elements in the chemical compound, i.e. on the empirical formula \molecule. The bigger the minimal number atoms, the better the approximation should be\footnote{More precisely: the smaller is the total variance difference between the approximation and the approximated term.}. In case of peptides and proteins, Senko et al. \cite{Senko1995Determination} introduced the concept of avergine, an averaged chain of $m$ amino acids, with empirical formula 
+\begin{equation*}
+	\cem{C}_{\lfloor m \times 4.9384\rfloor} 
+	\cem{H}_{\lfloor m \times 7.7583\rfloor} 
+	\cem{O}_{\lfloor m \times 1.4773\rfloor} 	
+	\cem{N}_{\lfloor m \times 1.3577\rfloor} 
+	\cem{S}_{\lfloor m \times 0.0417\rfloor},
+\end{equation*}
+We infer $n$'s from that relationship while using Lemma \ref{weak convergence of multinomial to Poissons lemma} for peptides and proteins.
+
+
+Finally, in the approximation we {\it calibrate} $\lambda$'s setting them to be equal to average numbers of isotopes using original {\it full distribution} \eqref{product of multinomials}. 
+
+This is done in contrast to the {\it fitting} approach used in \cite{Breen2000AutomaticPeak,Valkenborg2007UsingPoisson}, where the mean of the approximation is used as a free parameter in an optimisation problem. These two solutions should not differ too much for larger compounds.
+
+
+
+
+\begin{lemma}\label{Poisson conditional on sum of Poissons}
+	Suppose we have a collection of $m$ independent Poisson-distributed random variables, $X_i \sim Poiss(\mu_i)$. Then $X_1, \dots, X_m$ given that $X_1 + \dots + X_m = K$ is multinomially distributed,
+
+$$ 
+	\Big(X_1, \dots, X_m | X_1 + \dots + X_m = K \Big) 
+	\sim 
+	\mathrm{Multi}\Big( \frac{\mu_1}{\sigma}, \dots, \frac{\mu_m}{\sigma}; K \Big), 
+$$
+	where $\sigma = \sum_{i = 1}^m \mu_i$.	
+\end{lemma}
+Proof might be found in \cite{Kingman1993PoissonProcesses}. 
+
+
+It is valuable to see, how Lemma \ref{Poisson conditional on sum of Poissons} generalizes while conditioning on {\it localised fine structure} constraints.
