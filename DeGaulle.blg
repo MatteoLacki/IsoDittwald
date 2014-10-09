@@ -7,44 +7,48 @@ A level-1 auxiliary file: ./tex/appendix.aux
 Database file #1: ./bib/spectrometry.bib
 Database file #2: ./bib/probability.bib
 Database file #3: ./bib/topology.bib
-You've used 15 entries,
+Database file #4: ./bib/generalMath.bib
+Warning--empty journal in Agnarsson2002OnTheSylvesterDenumerants
+Warning--there's a number but no volume in Agnarsson2002OnTheSylvesterDenumerants
+You've used 18 entries,
             2785 wiz_defined-function locations,
-            720 strings with 8326 characters,
-and the built_in function-call counts, 8320 in all, are:
-= -- 692
-> -- 205
-< -- 22
-+ -- 85
-- -- 70
-* -- 551
-:= -- 1041
-add.period$ -- 15
-call.type$ -- 15
-change.case$ -- 77
+            742 strings with 9064 characters,
+and the built_in function-call counts, 10050 in all, are:
+= -- 832
+> -- 261
+< -- 25
++ -- 108
+- -- 90
+* -- 666
+:= -- 1260
+add.period$ -- 17
+call.type$ -- 18
+change.case$ -- 95
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 765
-empty$ -- 755
-format.name$ -- 78
-if$ -- 1830
+cite$ -- 20
+duplicate$ -- 916
+empty$ -- 907
+format.name$ -- 100
+if$ -- 2207
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 154
-newline$ -- 50
-num.names$ -- 30
-pop$ -- 216
+int.to.str$ -- 18
+missing$ -- 185
+newline$ -- 59
+num.names$ -- 36
+pop$ -- 269
 preamble$ -- 1
-purify$ -- 65
+purify$ -- 81
 quote$ -- 0
-skip$ -- 246
+skip$ -- 295
 stack$ -- 0
-substring$ -- 536
-swap$ -- 468
-text.length$ -- 22
+substring$ -- 643
+swap$ -- 559
+text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
-warning$ -- 0
-while$ -- 67
-width$ -- 17
-write$ -- 165
+type$ -- 62
+warning$ -- 2
+while$ -- 81
+width$ -- 20
+write$ -- 192
+(There were 2 warnings)

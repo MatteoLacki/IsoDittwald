@@ -51,38 +51,39 @@ Missing therms can be retrieved from relationships $\cem{^{12}C} + \cem{^{13}C} 
 	a \emph{localised fine structure with $K$ extra neutrons}.  	
 \end{mydef}
 
+The reason for numbers 2 and 4 appearing above is that \ce{^{18}O} and \ce{^{34}S} have two additional neutrons, and \ce{^{36}S} -- four; confront Table \ref{basic info on isotopes table}.
+
+The problem of finding the cardinal number of $LFS_K$ is also known as the money exchange problem. In general, enumeration of all elements of $LFS_K$ corresponds to finding all integer solutions $(x_1, \dots, x_k)$ to a {\it Linear Diophantine Equation}  
+\begin{equation}\label{Linear Diophantine Equation}
+	a_1 x_1 + \dots + a_k x_k = K,
+\end{equation}
+where $(a_1, \dots, a_k)$ are integer coefficients. It is known, see \cite{Agnarsson2002OnTheSylvesterDenumerants}, that the number of solutions to \eqref{Linear Diophantine Equation} is approximately $\frac{K^{k-1}}{(k-1)! a_1 \dots a_k}$ if only the greatest common divisor of the equation's parameters is equal to one. It is hard to imagine an organic substance without carbon, show that this proxy in our applications always holds. This is a big problem, but there is a natural ordering on solutions {\it via} probability \eqref{product of multinomials} and we concentrate on finding only the most probable configurations. 
+
 %  is simply a subset of all possible configurations \eqref{long chemical formula} with additional constraint 
 % \begin{equation}\label{Simple Diophantine Equation}
 % 	\cem{c_1} + \cem{h_1} + \cem{n_1} + \cem{o_1} + 2 \cem{o_2} + \cem{s_1} + 2 \cem{s_2} + 4 \cem{s_4} = K.
 % \end{equation}
 
-With Definition \ref{localised fine structure definition} at hand we can state the problem of interest
-
-\begin{Problem}
-	For a given $K$, find a possibly small set $B$ of configurations s.t. 
+\begin{Problem}\label{Problem of finding LFS_K configurations.}
+	For a given $K$, find a small set $B \subset LFS_K$ of configurations s.t. 
 	\begin{equation}\label{problem equation}
-		\mathbb{M}_K (B) = \frac{ \mathbb{M}(B) }{ \mathbb{M}( LFS_K ) } \approx 1\,.	
+		\mathbb{M}_K (B) := \frac{ \mathbb{M}(B) }{ \mathbb{M}( LFS_K ) } \approx 1\,.	
 	\end{equation} 
 \end{Problem}
 
 
-In statistical terms therefore, we are interested in approximating the critical set of distribution. 
+In statistical terms, we are interested in approximating the critical set of the distribution on configurations that make part of a given {\it localised fine structure}. 
 
 
-Why should one study law described by \eqref{problem equation} in the first place? Note that to each configuration we can assign the corresponding mass by 
-\begin{equation*}
-	\text{Total Mass} = \sum \text{Mass}_i \times \text{Occurences}_i, 
-\end{equation*}
-where the summing extends over all isotopes of elements present in the compound. The point is that one can observe only small differences in the masses of the so called {\it equatransneutronic configurations}, i.e. the ones, that have the same total number of extra neutrons with respect to the lightest isotopes, possibly on atoms of different elements, see \cite{Olson2009Calculations}. Therefore, all these peaks should be localised in one particular region of the mass to charge domain. Note also, that the calculation of $\mathbb{M}( LFS_K )$ can be already carried out using different algorithms, like \cite{Claesen2012Efficient}, being, in general, feasible. 
+Why should one study law described by \eqref{problem equation} in the first place? The mass of all configurations in a {\it localised fine structure} can be approximated at first by the monoisotopic mass shifted by the the number of extra neutrons times one Dalton. By doing that, we assume that all extra neutrons weight exactly one Dalton. That assumption is used in many algorithms, as \textsc{BRAIN} \cite{Claesen2012Efficient}, \dots\todo{Add more softwares}. That is a good approximation, since the difference between masses are much smaller than one Dalton for different elements, see \cite{Hughey2001KendrickMassDefect}. If that was the case, one could not discern among configurations gathered in $LFS_K$. One might be thought interested in studying yet more precise molecule's fingerprint. This can be achieved by looking precisely at $LFS_K$. All of configurations in $LFS_K$ are localised in the same region of the mass to charge domain, being the proximity of the above-mentioned approximation. This has additional advantages resulting from the construction of machines, as described in the last section of the article\todo{Wait for Dirk or Frederik's answer on the resolution being different in different mass to charge regions.}.  
 
 
-A naive algorithm for solving 
+% The main point of interest in the localised fine structure problem is how to efficiently derive a possibly short list of the most probable isotopic configurations that satisfy \eqref{Simple Diophantine Equation}. The number of extra neutrons, $K$, should take values between zero and $c + h + n + 2o + 4s$ -- the maximal number of extra neutrons a molecule with a fixed amount of elements can have. Numbers $2$ and $4$ are simply the maximal number of extra neutrons that oxygen and suflur can absorb respectively, see Table \ref{basic info on isotopes table}.
 
+To solve Problem \ref{Problem of finding LFS_K configurations.} we proceed by approximating 
+\todo[inline]{Change exposition.}
 
-The main point of interest in the localised fine structure problem is how to efficiently derive a possibly short list of the most probable isotopic configurations that satisfy \eqref{Simple Diophantine Equation}. The number of extra neutrons, $K$, should take values between zero and $c + h + n + 2o + 4s$ -- the maximal number of extra neutrons a molecule with a fixed amount of elements can have. Numbers $2$ and $4$ are simply the maximal number of extra neutrons that oxygen and suflur can absorb respectively, see Table \ref{basic info on isotopes table}.
-
-
-We approximate the {\it full distribution} \eqref{product of multinomials} by a product of Poisson laws.
+ the {\it full distribution} \eqref{product of multinomials} by a product of Poisson laws.
 	
 
 \begin{lemma}\label{weak convergence of multinomial to Poissons lemma}
@@ -92,7 +93,7 @@ $$
 	\begin{pmatrix}
 		n \cr r_0, r_1, \dots, r_w
 	\end{pmatrix} 
-	p_{0,n}^{r_0}  p_{1,n}^{r_1} \dots p_{w,n}^{r_w}.
+	p_{0,n}^{r_0}  p_{1,n}^{r_1} \dots p_{w,n}^{r_w}. 
 $$
 	If \,\,$\lim_{n\to \infty} n p_{k,n}= \lambda_k$ exist for $k=1,\dots, w$ then 
 \begin{equation}\label{weak convergence of multionial to Poissons equation}
@@ -198,7 +199,7 @@ The proof can be found in \cite{Kingman1993PoissonProcesses}.
 
 Note that $A$ can be described by sums of three different Poisson variables instead of eight:
 \begin{equation}\label{setA}
-	A = \Big\{ \underbrace{\cem{^{13}C} + \cem{^2H} + \cem{^{15}N} + \cem{^{17}O} + \cem{^{33}S}}_{ G_1 } + 2 \times \underbrace{( \cem{^{18}O} + \cem{^{34}S} )}_{ G_2 } + 4 \times \underbrace{\cem{^{36}S}}_{ G_4 } = K \Big\}.	
+	A = \Big\{ \underbrace{\cem{^{13}C} + \cem{^2H} + \cem{^{15}N} + \cem{^{17}O} + \cem{^{33}S}}_{ G_1 } + \,2 \times \underbrace{( \cem{^{18}O} + \cem{^{34}S} )}_{ G_2 } + \,4 \times \underbrace{\cem{^{36}S}}_{ G_4 } = K \Big\}.	
 \end{equation}
 where $G_1 \sim \mathrm{Poiss}(\mu)$, $G_2 \sim \mathrm{Poiss}(\mu)$, and $G_4 \sim \mathrm{Poiss}(\mu)$. There is a strict link between random variables $G_i$ and the concept of equatransneutronic groups described in \cite{Olson2009Calculations}: it is equal to the total number of atoms in a compound bearing additional $i$ neutrons. Also, let us define three numbers
 \begin{align*}

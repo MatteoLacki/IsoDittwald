@@ -2,6 +2,10 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
+\bibitem{Agnarsson2002OnTheSylvesterDenumerants}
+Agnarsson, G.: On the sylvester denumerants for general restricted partitions.
+  (154),  49--60 (2002)
+
 \bibitem{Bobkov1998OnModifiedLogarithmicSobolev}
 Bobkov, S., Ledoux, M.: On modified logarithmic sobolev inequalities for
   bernoulli and poisson measures. Journal of Functional Analysis  156(2),  347
@@ -24,9 +28,19 @@ Claesen, J., Dittwald, P., Burzykowski, T., Valkenborg, D.: {An Efficient
 Dugundji, J.: Topology. Allyn and Bacon series in advanced mathematics, Allyn
   and Bacon, Boston (1966), \url{http://opac.inria.fr/record=b1079460}
 
+\bibitem{Eidhammer2008ComputationalMethodsInMassSpectrometry}
+Eidhammer, I., Flikka, K., Martens, L., Mikalsen, S.O.: Computational Methods
+  for Mass Spectrometry Proteomics. Wiley-Interscience (2007)
+
 \bibitem{Feller1968IntroductionToProbability}
 Feller, W.: {A}n Introduction to Probability Theory and Its Applications,
   vol.~1. Wiley (January 1968)
+
+\bibitem{Hughey2001KendrickMassDefect}
+Hughey, C.A., Hendrickson, C.L., Rodgers, R.P., Marshall, A.G., Qian, K.:
+  {{K}endrick mass defect spectrum: a compact visual analysis for
+  ultrahigh-resolution broadband mass spectra}. Anal. Chem.  73(19),
+  4676--4681 (Oct 2001)
 
 \bibitem{Kallenberg2002FoundationsOfModernProbability}
 Kallenberg, O.: Foundations of modern probability. Probability and its

@@ -1,2 +1,21 @@
 %!TEX root = ../DeGaulle.tex
 \section{Discussion and Conclusions}
+
+\todo[inline]{Novelties:}
+
+\begin{itemize}
+	\item 	Greedy approach based on concentration of measure considerations. 
+	\item  	Top-down identification compatibility. 
+\end{itemize}
+
+\todo[inline]{Advantage: Say that it suits extremely well a top-down identification strategy.}
+
+One could say that Problem \ref{Problem of finding LFS_K configurations.} is not the one worth studying. Assuming that the machines are already advanced enough to resolve peaks that come from different configurations with the same number of neutrons, why should one not pose the following:
+
+\begin{Problem}
+	Find a small set $C$ among all possible configurations, s.t. $\mathbb{M}(C) \approx 1$.
+\end{Problem}
+
+Observe, that such a problem could be solved in a gready manner\footnote{The development of such an algorithm is already proceeding }, similar to one described in the previous section\todo{Write about the gready approach we use to get the peaks.}, with a naturally arrising candidate for the biggest peak: the direct product of modes of each multinomial model described by \eqref{product of multinomials}. However, at least in case of Time of Flight analyzers, there is one potential advantage of studying the $LFS_K$ configurations over the ones gathered in the critical set $C$: it is known, that in these instruments the resolution depends on the mass of analyte, see \cite{Eidhammer2008ComputationalMethodsInMassSpectrometry}. It is more difficult to differentiate correctly molecules with similar masses, when both of them are big. There is no guarantee that while proceeding with calculations of elements of $C$ one would not obtain peaks from different regions in the mass to charge domain. Therefore, some sort of additional error term in the resolution would have to be included and it is not straightforward to model it. By studying $LFS_K$ we neglect that sort of problem, because of the localisation in the mass to charge domain.
+
+Observe also, that one might have though of approaching Problem \ref{Problem of finding LFS_K configurations.} by using the above mentioned algorithm, or, in general, any algorithm that results in obtaining {\it fine structure} masses, and subsequently, by discarding all configurations with masses outside a prespecified interval. This might, however, tremendously prolongue the algorithm's operating time and additional considerations to bypass this problem would have to be made.  
