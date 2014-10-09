@@ -1,15 +1,23 @@
 %!TEX root = ../DeGaulle.tex
 \section{Approximations}
 
-	By an isotopic configuration we understand information about the number of different isotopes in the sample. For the purpose of simplicity, we focus on configurations of chemical compounds made out of carbon, hydrogen, nitrogen, oxygen, and sulfur, i.e. compounds with empirical formulas like \molecule. We underline that in general analysis is not constrained only to these elements. Observe however, that one already encompasses compounds like peptides and proteins. An isotopic configuration can be represented by an extended empirical formula 
+By an isotopic configuration we understand information about the number of different isotopes in the sample. For the purpose of simplicity, we focus here on chemical compounds composed of carbon, hydrogen, nitrogen, oxygen, and sulfur; still, the results of this section generalize to any compounds whatsoever. Thus, we concentrate on compounds like \molecule, where the low case letters describe the numbers of atoms of particular element type. Among such compounds one can already find peptides and proteins. An isotopic configuration could be represented by an extended empirical formula, 
 \begin{equation}\label{long chemical formula}
 	\text{\moleculeIsotopic}.
 \end{equation}
 
 In the above representation, small letters with indices represent counts of different atoms with indices displaying the number of additional neutrons an isotope has with respect to the lighest possible isotopic variant. 
-Observe that $\cem{c} = \cem{c_0} + \cem{c_1}$, $\cem{h} = \cem{h_0} + \cem{h_1}$, and so on, where $\cem{c}, \cem{h}, \dots$, are atom numbers from the empirical formula \molecule. The left superscripts of big letters represent atomic numbers of different elements. The probability of such a variant is usually assumed to be a product of independent multinomial distributions
+
+Rather than \eqref{long chemical formula}, we shall be using an equivalent probabilistic notation, treating upper case letters, like \ce{^{12}C}, as random variables and considering small case letters, $\cem{c_0}$, to be their realisations. An expression like $A = \{ \ce{^{13}C} = \cem{c_1},\, \ce{^{2}H} = \cem{h_1} \}$ is shorthand for saying: let us focus on all configurations \eqref{long chemical formula} that have \ce{c_1} heavy carbons and \ce{h_1} deuters in total.
+
+
+Following \cite{Kienitz1961MassSpectrometry}, one assumes that the law of vector
+\begin{equation}\label{long chemical vector}
+	\left( \cem{^{12}C},\, \cem{^{13}C},\, \cem{^{1}H},\, \cem{^{2}H},\, \cem{^{14}N},\, \cem{^{15}N},\, \cem{^{16}O},\, \cem{^{17}O},\, \cem{^{18}O},\, \cem{^{32}S},\, \cem{^{33}S},\, \cem{^{34}S},\, \cem{^{36}S} \right),	
+\end{equation}
+given \molecule, is a product of independent multinomial distributions,
 {\small\begin{equation}\label{product of multinomials}
-	\cem{M} = \mathrm{Multi} \Big( \prob(\cem{^{12}C}), \prob(\cem{^{13}C}); c \Big)
+	\mathbb{M} = \mathrm{Multi} \Big( \prob(\cem{^{12}C}), \prob(\cem{^{13}C}); c \Big)
 	\otimes \dots \otimes 
 	\mathrm{Multi} \Big( \prob(\cem{^{32}S}), \prob(\cem{^{33}S}), \prob(\cem{^{34}S}), \prob(\cem{^{36}S}); s \Big),	
 \end{equation}}
@@ -24,44 +32,52 @@ where the probabilities of observing particular isotopes, $\prob(\cem{^{12}C})$,
 and it should be multiplied by similar expression for hydrogen, nitrogen, oxygen and sulfur to obtain probability for expression like \eqref{long chemical formula}.
 
 
-
-\begin{table}[ht]
-	\centering
-	\caption{Basic Information on Stable Isotopes, as found in \cite{Rosman1997IsotopicCompositions}.}\label{basic info on isotopes table}
-	\begin{tabular}{lccll}
-		\toprule
-Element 	& Isotope 		& Extra Neutrons& Mass [Da] & Probability 	\\
-		\midrule
-\multirow{2}{*}{Carbon}  	
-			& \ce{^{12}C} 	& 0 			& 12 		& 0.9893 		\\	
-  			& \ce{^{13}C} 	& 1 			& 13.0033 	& 0.0107 		\\	
-  		\cmidrule(r){1-5}
-\multirow{2}{*}{Hydrogen}  	
-			& \ce{^1H} 		& 0 			& 1.0078 	& 0.999885 		\\	
-  			& \ce{^2H} 		& 1 			& 2.0141 	& 0.000115 		\\	
-  		\cmidrule(r){1-5}	
-\multirow{2}{*}{Nitrogen}  	
-			& \ce{^{14}N} 	& 0 			& 14.0031 	& 0.99632 		\\	
-  			& \ce{^{15}N}	& 1 			& 15.0001 	& 0.00368 		\\	  	  
-  		\cmidrule(r){1-5}	
-\multirow{3}{*}{Oxygen}  	
-			& \ce{^{16}O} 	& 0 			& 15.9949 	& 0.99757 		\\	
-  			& \ce{^{17}O}	& 1 			& 16.9991 	& 0.00038 		\\	  	  	
-  			& \ce{^{18}O}	& 2 			& 17.9992 	& 0.00205 		\\	  	  
-  		\cmidrule(r){1-5}	
-\multirow{4}{*}{Sulfur}  	
-			& \ce{^{32}S} 	& 0 			& 31.9721 	& 0.9493 		\\	
-  			& \ce{^{33}S}	& 1 			& 32.9714 	& 0.0076 		\\	  	  
-  			& \ce{^{34}S}	& 2 			& 33.9679 	& 0.0429 		\\
-  			& \ce{^{36}S}	& 4 			& 35.9671 	& 0.0002 		\\		
-		\bottomrule
-	\end{tabular}
-\end{table}
-
-A {\it localised fine structure} with $K$ extra neutrons is simply a subset of all possible configurations \eqref{long chemical formula} with additional constraint 
-\begin{equation}\label{Simple Diophantine Equation}
-	\cem{c_1} + \cem{h_1} + \cem{n_1} + \cem{o_1} + 2 \cem{o_2} + \cem{s_1} + 2 \cem{s_2} + 4 \cem{s_4} = K.
+Observe, that given \molecule, part of the information in \eqref{long chemical vector} is redundant and can be shortened by neglecting counts of the lightest isotope variants, leaving us with 
+\begin{equation}\label{short chemical vector}
+ 	\left( \cem{^{13}C},\, \cem{^{2}H},\, \cem{^{15}N},\, \cem{^{17}O},\, \cem{^{18}O},\, \cem{^{33}S},\, \cem{^{34}S},\, \cem{^{36}S} \right).	
 \end{equation}
+Missing therms can be retrieved from relationships $\cem{^{12}C} + \cem{^{13}C} = \cem{c}$, $\cem{^{1}H} + \cem{^{2}H} = \cem{h}$, and so on, that occur with probability one.
+
+\begin{mydef}\label{localised fine structure definition}
+	We call the set of configurations  
+	{\small
+		\begin{equation}\label{LFS_K}
+			LFS_K	=
+			\left\{ 
+				\cem{^{13}C} + \cem{^{2}H} +  \cem{^{15}N} +  \cem{^{17}O} +  \cem{2 $\times$^{18}O} +  \cem{^{33}S} +  \cem{2 $\times$^{34}S} + \cem{4 $\times$^{36}S} = K	
+			\right\}
+		\end{equation}
+	}
+	a \emph{localised fine structure with $K$ extra neutrons}.  	
+\end{mydef}
+
+%  is simply a subset of all possible configurations \eqref{long chemical formula} with additional constraint 
+% \begin{equation}\label{Simple Diophantine Equation}
+% 	\cem{c_1} + \cem{h_1} + \cem{n_1} + \cem{o_1} + 2 \cem{o_2} + \cem{s_1} + 2 \cem{s_2} + 4 \cem{s_4} = K.
+% \end{equation}
+
+With Definition \ref{localised fine structure definition} at hand we can state the problem of interest
+
+\begin{Problem}
+	For a given $K$, find a possibly small set $B$ of configurations s.t. 
+	\begin{equation}\label{problem equation}
+		\mathbb{M}_K (B) = \frac{ \mathbb{M}(B) }{ \mathbb{M}( LFS_K ) } \approx 1\,.	
+	\end{equation} 
+\end{Problem}
+
+
+In statistical terms therefore, we are interested in approximating the critical set of distribution. 
+
+
+Why should one study law described by \eqref{problem equation} in the first place? Note that to each configuration we can assign the corresponding mass by 
+\begin{equation*}
+	\text{Total Mass} = \sum \text{Mass}_i \times \text{Occurences}_i, 
+\end{equation*}
+where the summing extends over all isotopes of elements present in the compound. The point is that one can observe only small differences in the masses of the so called {\it equatransneutronic configurations}, i.e. the ones, that have the same total number of extra neutrons with respect to the lightest isotopes, possibly on atoms of different elements, see \cite{Olson2009Calculations}. Therefore, all these peaks should be localised in one particular region of the mass to charge domain. Note also, that the calculation of $\mathbb{M}( LFS_K )$ can be already carried out using different algorithms, like \cite{Claesen2012Efficient}, being, in general, feasible. 
+
+
+A naive algorithm for solving 
+
 
 The main point of interest in the localised fine structure problem is how to efficiently derive a possibly short list of the most probable isotopic configurations that satisfy \eqref{Simple Diophantine Equation}. The number of extra neutrons, $K$, should take values between zero and $c + h + n + 2o + 4s$ -- the maximal number of extra neutrons a molecule with a fixed amount of elements can have. Numbers $2$ and $4$ are simply the maximal number of extra neutrons that oxygen and suflur can absorb respectively, see Table \ref{basic info on isotopes table}.
 
@@ -149,11 +165,14 @@ $$
 Proof might be found in \cite{Kingman1993PoissonProcesses}. 
 
 
-Suppose that we concentrated on molecule composed of elements that have only one additional neutron, e.g. \smallMolecule. Then, following Lemma \ref{Poisson conditional on sum of Poissons}, the approximative distribution of the {\it localised fine structure} given that we restricted our attention only to configurations with $K$ extra neutrons would simply be 
-\begin{equation}\label{Simple Multinomial Eq}
-	\mathrm{Multi}\left(\frac{\lambda_\cem{^{13}C}}{\mu}, \frac{\lambda_\cem{^{2}H}}{\mu}, \frac{\lambda_\cem{^{15}N}}{\mu}; \cem{c} + \cem{h} + \cem{n} \right).	
-\end{equation}
+Suppose that we concentrated on molecule composed of elements that have only one additional neutron, e.g. \smallMolecule. Then, following Lemma \ref{Poisson conditional on sum of Poissons}, 
 
+\begin{result}
+ 	The approximative distribution of the \emph{ localised fine structure} with $K$ extra neutrons of \smallMolecule\, is 
+	\begin{equation}\label{Simple Multinomial Eq}
+		\mathrm{Multi}\left(\frac{\lambda_\cem{^{13}C}}{\mu}, \frac{\lambda_\cem{^{2}H}}{\mu}, \frac{\lambda_\cem{^{15}N}}{\mu}; K \right).	
+	\end{equation}	
+\end{result}
 
 However, it is not yet clear why should it be true that we can approximate the {\it localised fine structure law} by the Poisson approximation conditional on the set of configurations with the same total number of extra neutrons. What remains to be shown is why the conditioning does not preclude convergence in distribution. This, however, can be easily proved.
 
@@ -220,12 +239,12 @@ In \cite{Olson2009Calculations} they are encoded by $k_1, k_2$, and $k_4$; also,
 \end{result}
 Thus, Result \ref{Fine structure law} also provides us with \eqref{equatransneutronic distribution} -- a natural distribution on the {\it equatransneutronic configurations}. In general, the elements forming a chemical compound may have different numbers of extra neutrons than $I = \{ 1, 2, 4\}$. For a general set $I$ formula \eqref{equatransneutronic distribution} generalizes to 
 \begin{equation*}
-	\mathbb{L}( k ) = 
+	\mathbb{L}( \bm{k} ) = 
 	\frac{ 
 		\prod_{i \in I} \frac{ \mu_i^{k_i} }{ {k_i}! } 
 	}{ 
-		\underset{ \{ k :  \sum_{i \in I} i k_i^*  = K \} }{\sum} 	
+		\underset{ \{ \bm{k}^* :  \sum_{i \in I} i k_i^*  = K \} }{\sum} 	
 		\prod_{i \in I} \frac{ \mu_i^{k_i^*} }{ {k_i^*}! }	
 	},
 \end{equation*}
-where $k$ is an ordered tuple indexed by $I$. Observe, that in nature at most $\# I \leq 10$, which poses a limit on the complexity of calculating all the values of $\mathbb{L}$. We call $\mathbb{L}$ the {\it lucky distribution} and note, that is is equivalent to conditioning $\#I$ independent Poisson distributions with different parameters on the set of solutions to Diophantine equation $\sum_{i \in I} i k_i^*  = K$.
+where $\bm{k}$ is an ordered tuple indexed by $I$. Observe, that in nature at most $\# I \leq 10$, which poses a limit on the complexity of calculating all the values of $\mathbb{L}$. We call $\mathbb{L}$ the {\it lucky distribution} and note, that is is equivalent to conditioning $\#I$ independent Poisson distributions with different parameters, $\bm{\mu}$, on the set of solutions to Diophantine equation $\sum_{i \in I} i k_i  = K$.

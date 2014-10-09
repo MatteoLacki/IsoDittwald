@@ -1,0 +1,26 @@
+%!TEX root = ../DeGaulle.tex
+\section*{Appendix}
+
+\subsection*{Proof of Lemma \ref{conditional convergence lemma}}
+
+We want to prove that if $\mu^{[n]} \rightharpoonup \mu$ and $\mu^{[n]}(A), \mu(A) > 0$, then also $\mu^{[n]}_A \rightharpoonup \mu_A$. We do this under the assumption that both $\mu^{[n]}$ and $\mu$ are discrete measures on probability space $E$. 
+
+By the {\it Portmanteau Lemma}, see \cite{Kallenberg2002FoundationsOfModernProbability}, $\mu^{[n]} \rightharpoonup \mu$ implies that for any set $A$ with boundry $\partial A$ subject to $\mu( \partial A) = 0$, one should observe 
+
+\begin{equation}\label{convergence in probability on good sets}
+	\lim_{n \to \infty} \mu^{[n]}(A) = \mu(A).
+\end{equation}
+
+
+The notion of boundry requires the notion of topology: thus, we decide on the discrete topology, which is natural in this context \footnote{For appropriate topological notions consult \cite{Dugundji1966Topology}.}. In this topology however, $\partial A = \emptyset$, for it is a set theoretical difference of the closure and the interior, both of which are equal to $A$. Hence, $\mu( \partial A) = 0$. Thus, \eqref{convergence in probability on good sets} always holds.
+
+{\it Ex definitione}, $\mu^{[n]} \rightharpoonup \mu$ means, that for any bounded function $f:E\to\mathbb{R}$ one observes
+\begin{equation}\label{weak convergence definition}
+	\int f \mathrm{d} \mu^{[n]} \underset{n \to \infty}{\xrightarrow{\hspace*{1cm}}} \int f \mathrm{d}\mu\,.
+\end{equation}
+
+A simple calculation using both \eqref{convergence in probability on good sets} and \eqref{weak convergence definition} completes the proof:
+
+\begin{equation*}
+	\int f \mathrm{d} \mu^{[n]}_A =  \frac{ \int f \mathrm{d} \mu^{[n]} }{ \mu^{[n]}(A) } \underset{n \to \infty}{\xrightarrow{\hspace*{1cm}}} \frac{ \int f \mathrm{d} \mu }{ \mu(A) } = \int f \mathrm{d} \mu\,.
+\end{equation*}

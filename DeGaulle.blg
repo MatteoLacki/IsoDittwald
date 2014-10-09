@@ -2,46 +2,49 @@ This is BibTeX, Version 0.99d (TeX Live 2013)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: DeGaulle.aux
 The style file: ./bst/splncs03.bst.bst
+A level-1 auxiliary file: ./tex/tables.aux
+A level-1 auxiliary file: ./tex/appendix.aux
 Database file #1: ./bib/spectrometry.bib
 Database file #2: ./bib/probability.bib
-You've used 12 entries,
+Database file #3: ./bib/topology.bib
+You've used 15 entries,
             2785 wiz_defined-function locations,
-            692 strings with 7731 characters,
-and the built_in function-call counts, 7275 in all, are:
-= -- 616
-> -- 184
-< -- 21
-+ -- 76
-- -- 64
-* -- 492
-:= -- 896
-add.period$ -- 12
-call.type$ -- 12
-change.case$ -- 67
+            720 strings with 8326 characters,
+and the built_in function-call counts, 8320 in all, are:
+= -- 692
+> -- 205
+< -- 22
++ -- 85
+- -- 70
+* -- 551
+:= -- 1041
+add.period$ -- 15
+call.type$ -- 15
+change.case$ -- 77
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 658
-empty$ -- 637
-format.name$ -- 72
-if$ -- 1602
+cite$ -- 15
+duplicate$ -- 765
+empty$ -- 755
+format.name$ -- 78
+if$ -- 1830
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 130
-newline$ -- 41
-num.names$ -- 24
-pop$ -- 180
+int.to.str$ -- 15
+missing$ -- 154
+newline$ -- 50
+num.names$ -- 30
+pop$ -- 216
 preamble$ -- 1
-purify$ -- 56
+purify$ -- 65
 quote$ -- 0
-skip$ -- 220
+skip$ -- 246
 stack$ -- 0
-substring$ -- 497
-swap$ -- 422
-text.length$ -- 21
+substring$ -- 536
+swap$ -- 468
+text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 44
+type$ -- 52
 warning$ -- 0
-while$ -- 58
-width$ -- 14
-write$ -- 134
+while$ -- 67
+width$ -- 17
+write$ -- 165
