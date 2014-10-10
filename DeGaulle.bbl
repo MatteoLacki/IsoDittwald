@@ -24,6 +24,11 @@ Claesen, J., Dittwald, P., Burzykowski, T., Valkenborg, D.: {An Efficient
   Center-Masses}. Journal of The American Society for Mass Spectrometry  23(4),
    753--763 (Apr 2012), \url{http://dx.doi.org/10.1007/s13361-011-0326-2}
 
+\bibitem{Dittwald2014}
+Dittwald, P., Valkenborg, D., Claesen, J., Rockwood, A., Gambin, A.: {O}n the
+  fine isotopic distribution and limits to resolution in mass spectrometry. in
+  preparation  (2014)
+
 \bibitem{Dugundji1966Topology}
 Dugundji, J.: Topology. Allyn and Bacon series in advanced mathematics, Allyn
   and Bacon, Boston (1966), \url{http://opac.inria.fr/record=b1079460}
@@ -31,10 +36,6 @@ Dugundji, J.: Topology. Allyn and Bacon series in advanced mathematics, Allyn
 \bibitem{Eidhammer2008ComputationalMethodsInMassSpectrometry}
 Eidhammer, I., Flikka, K., Martens, L., Mikalsen, S.O.: Computational Methods
   for Mass Spectrometry Proteomics. Wiley-Interscience (2007)
-
-\bibitem{Feller1968IntroductionToProbability}
-Feller, W.: {A}n Introduction to Probability Theory and Its Applications,
-  vol.~1. Wiley (January 1968)
 
 \bibitem{Hughey2001KendrickMassDefect}
 Hughey, C.A., Hendrickson, C.L., Rodgers, R.P., Marshall, A.G., Qian, K.:
