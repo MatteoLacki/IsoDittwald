@@ -12,37 +12,37 @@ Warning--empty journal in Agnarsson2002OnTheSylvesterDenumerants
 Warning--there's a number but no volume in Agnarsson2002OnTheSylvesterDenumerants
 You've used 18 entries,
             2785 wiz_defined-function locations,
-            740 strings with 9097 characters,
-and the built_in function-call counts, 10109 in all, are:
+            740 strings with 9158 characters,
+and the built_in function-call counts, 10073 in all, are:
 = -- 834
 > -- 281
 < -- 24
 + -- 116
 - -- 98
 * -- 672
-:= -- 1277
-add.period$ -- 17
+:= -- 1273
+add.period$ -- 16
 call.type$ -- 18
-change.case$ -- 100
+change.case$ -- 101
 chr.to.int$ -- 0
 cite$ -- 20
-duplicate$ -- 914
-empty$ -- 894
+duplicate$ -- 908
+empty$ -- 887
 format.name$ -- 109
-if$ -- 2209
+if$ -- 2200
 int.to.chr$ -- 0
 int.to.str$ -- 18
-missing$ -- 187
+missing$ -- 185
 newline$ -- 59
 num.names$ -- 36
-pop$ -- 275
+pop$ -- 269
 preamble$ -- 1
 purify$ -- 85
 quote$ -- 0
-skip$ -- 295
+skip$ -- 293
 stack$ -- 0
-substring$ -- 627
-swap$ -- 561
+substring$ -- 629
+swap$ -- 560
 text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
@@ -50,5 +50,5 @@ type$ -- 64
 warning$ -- 2
 while$ -- 81
 width$ -- 20
-write$ -- 191
+write$ -- 190
 (There were 2 warnings)

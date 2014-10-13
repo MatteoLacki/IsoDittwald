@@ -2,3 +2,57 @@
 \section{Algorithms}
 
 
+One can treat Algorithm \ref{DeFine Basic Algo} as a subroutine for Algorithm \ref{DeFine Parellely Algo}.
+
+\begin{algorithm}\caption{DeFine Basic}
+\begin{algorithmic}[1]\label{DeFine Basic Algo}
+
+	\State 	\textbf{inputs}	\smallMolecule, K 
+	\State 	Get mode candidate.
+	
+	\State  \textbf{Shit}.
+\end{algorithmic}	
+\end{algorithm}
+
+
+\begin{algorithm}\caption{DeFine Parallely}
+\begin{algorithmic}[1]\label{DeFine Parellely Algo}
+	\State	\textbf{require:} \molecule, $K, L, M, B$
+	\State 	Find  		$S = \{ (k_1, k_2, k_4) : k_1 + 2 k_2 + 4 k_4 = K \}$.
+	\State 	Find 		$P = \{ \prob(\bm{k}) : \bm{k} \in S \}$
+	\State 	Order $S$ using $P$ and select the top $L \%$. Call result $S^*$.
+	
+
+	\FORALLP{ $\bm{k} \in S^*$}
+		\State $\mathfrak{M}$ := Critical $M\%$ set of $\mathrm{Multi} \left(
+				\frac{ \lambda_\cem{^{13}C} }{ \mu }, 
+				\frac{ \lambda_\cem{^{2} H} }{ \mu }, 
+				\frac{ \lambda_\cem{^{15}N} }{ \mu },
+				\frac{ \lambda_\cem{^{17}O} }{ \mu }, 
+				\frac{ \lambda_\cem{^{33}S} }{ \mu }; 
+				k_1
+			\right )$
+
+		\State $\mathfrak{B}$ \,:= Critical $B\%$ set of 
+		$\mathrm{Multi} \left(
+			\frac{ \lambda_\cem{^{18}O} }{ \eta },
+			\frac{ \lambda_\cem{^{34}S} }{ \eta }; 
+			k_2	
+		\right)$		
+
+		% \State $\mathfrak{C} \,\,\,:= \mathfrak{M} \otimes \mathfrak{B} \otimes \{ k_4 \}$
+
+		\State 	Result := 
+			$\Bigg\{ 
+				\Big( 
+					\mathbb{M}( \bm{x}, \bm{y}, z ), 
+					M( \bm{x}, \bm{y}, z )
+				\Big) : 
+				\bm{x} \in \mathfrak{M}, 
+				\bm{y} \in \mathfrak{B}, 
+				z = k_4  
+			\Bigg\}$
+	\ENDFAP
+
+\end{algorithmic}	
+\end{algorithm}
