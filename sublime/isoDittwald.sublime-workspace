@@ -520,34 +520,42 @@
 	"buffers":
 	[
 		{
+			"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/discussionsAndConclusions.tex",
+			"settings":
+			{
+				"buffer_size": 2936,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/DeGaulle.tex",
 			"settings":
 			{
-				"buffer_size": 1708,
+				"buffer_size": 2049,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/intro.tex",
+			"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/algorithms.tex",
 			"settings":
 			{
-				"buffer_size": 177,
+				"buffer_size": 1602,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/matteoLacki/Downloads/export-ValkenborgD.bib",
+			"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/sty/mystyle.sty",
 			"settings":
 			{
-				"buffer_size": 18165,
+				"buffer_size": 2280,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/bib/try.bib",
+			"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/approximations.tex",
 			"settings":
 			{
-				"buffer_size": 18165,
+				"buffer_size": 20372,
 				"line_ending": "Unix"
 			}
 		}
@@ -651,7 +659,7 @@
 				"Set Syntax: LaTeX"
 			]
 		],
-		"width": 340.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -668,10 +676,26 @@
 	},
 	"file_history":
 	[
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/bib/generalMath.bib",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/bib/probability.bib",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/bib/spectrometry.bib",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/bib/topology.bib",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/intro.tex",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/sty/mystyle.sty",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/appendix.tex",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/DeGaulle.tex",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/tables.tex",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/acknowledgments.tex",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/algorithms.tex",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/discussionsAndConclusions.tex",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/bib/spectometry.bib",
+		"/Users/matteoLacki/Dropbox/Science/BibtexReferences/spectometry.bib",
+		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/bib/try.bib",
+		"/Users/matteoLacki/.ssh/id_rsa.pub",
+		"/Users/matteoLacki/Downloads/export-ValkenborgD.bib",
 		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/acknowledgements.tex",
 		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/templates/authorsInstructions.tex",
 		"/Users/matteoLacki/Dropbox/Science/ParallelTempering/ParallelArticle/parallelArticle.tex",
-		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/sty/mystyle.sty",
 		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/.gitignore",
 		"/Users/matteoLacki/Downloads/llncs2e/llncs.doc",
 		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/substanceP2.R",
@@ -779,23 +803,7 @@
 		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/Tests/simulationsCheckedOnaAtATime.R",
 		"/Users/matteoLacki/Dropbox/Study/R/iterators.R",
 		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/Tests/glmnet.R",
-		"/Users/matteoLacki/Dropbox/Science/ParallelTempering/Parallel_Tempering/algorithms/metropolisHastings.R",
-		"/Users/matteoLacki/Dropbox/PT/terzoPrototipo/algorithms/parallelTemperings.R",
-		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/Tests/insilicoTests.R",
-		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/Tests/messingWithIntercept.R",
-		"/Users/matteoLacki/Dropbox/Teaching/Statistics2/ready/2014_04_25/R/glmnet.R",
-		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/Tests/glmnet3.R",
-		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/Tests/mac_simulations.R",
-		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/Tests/plottingAllDistributions.R",
-		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/Tests/subproblemsPlot.R",
-		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/Tests/chargeFinder.R",
-		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/example",
-		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/Tests/testingGaussianRepresentation.R",
-		"/Users/matteoLacki/Dropbox/Science/Biology/Boreliosis/R/modelling.R",
-		"/Users/matteoLacki/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/Rproject/Tests/insilicoTests2.R",
-		"/Users/matteoLacki/Desktop/blabla.R",
-		"/home/matteo/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/vignettes/mystyle.sty",
-		"/home/matteo/Dropbox/Science/MassSpectrometry/ETD_ETnoD_PTR/vignettes/tex/formulers.tex"
+		"/Users/matteoLacki/Dropbox/Science/ParallelTempering/Parallel_Tempering/algorithms/metropolisHastings.R"
 	],
 	"find":
 	{
@@ -814,6 +822,36 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"multi",
+			"\\STATE",
+			"would depend",
+			"Dittwald",
+			"a_",
+			"practice",
+			"practiece",
+			"averaged",
+			"setA",
+			"and then pose",
+			"pose",
+			"modes",
+			"goodness",
+			"goodnees",
+			"goodnoes",
+			"\\mathbb{M}",
+			"\\mathbb{M}_K",
+			"\\mathbb{Q}_K",
+			"it is known",
+			"todo",
+			"different",
+			"problem",
+			"interest",
+			",\\,",
+			"following",
+			"probabilistic things",
+			"address",
+			"publi",
+			"\\}.	",
+			"of all",
 			"pl",
 			"eijkel",
 			"mc",
@@ -911,36 +949,6 @@
 			"data",
 			"darta",
 			"data",
-			"print",
-			"data",
-			"biochemicalInfo",
-			"Reduce",
-			"StickFitter",
-			"Reduce",
-			"colClasses",
-			"data",
-			"Reduce",
-			"data",
-			"file",
-			"sql",
-			"read",
-			"error",
-			"ubiquitineModel",
-			"ubiquitineVaryingParametersFiles",
-			"ubiquitineSameParametersFiles",
-			"errors",
-			"lambda",
-			"ridge",
-			"T",
-			"mzAtheoretic",
-			"cutIntensity",
-			"error",
-			".\n",
-			"# ill2 	<- sqldf(\n# \"SELECT 		forest, sum( ill ) AS ill\n# 	FROM 		bestDatasetEver\n# 	GROUP BY 	forest;\"\n# )\n",
-			"particlesNo",
-			"fragmentations",
-			"constantIntensity",
-			"aminoAcidResidues",
 			"print"
 		],
 		"highlight": true,
@@ -949,6 +957,13 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\\State",
+			"d_",
+			"\\MM",
+			"\\MK",
+			"\\QK",
+			" + ",
+			"long chemical vector",
 			"ubiquitineModel",
 			"k",
 			"j",
@@ -1069,14 +1084,7 @@
 			"cAfterETD",
 			"ETDorHTR",
 			"extraProtonsNo",
-			"extraProtonsNo3",
-			"extraProtonsNo",
-			"finalChargeAndFormula",
-			"chargeAndFormula",
-			"notOccured",
-			"<-",
-			"<-3HH",
-			"<-3H"
+			"extraProtonsNo3"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1087,161 +1095,23 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/DeGaulle.tex",
+					"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/discussionsAndConclusions.tex",
 					"settings":
 					{
-						"buffer_size": 1708,
+						"buffer_size": 2936,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1692,
-								1692
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2.0,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5.0,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10.0,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 1,
-					"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/intro.tex",
-					"settings":
-					{
-						"buffer_size": 177,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								177,
-								177
+								1147,
+								1152
 							]
 						],
 						"settings":
@@ -1359,47 +1229,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/Users/matteoLacki/Downloads/export-ValkenborgD.bib",
+					"buffer": 1,
+					"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/DeGaulle.tex",
 					"settings":
 					{
-						"buffer_size": 18165,
+						"buffer_size": 2049,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4495,
-								4477
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1509.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/bib/try.bib",
-					"settings":
-					{
-						"buffer_size": 18165,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								18165,
-								18165
+								1351,
+								1351
 							]
 						],
 						"settings":
@@ -1508,12 +1350,403 @@
 							},
 							"codeintel_tooltips": "popup",
 							"sublime_auto_complete": true,
-							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 5065.0,
+						"translation.y": 214.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/algorithms.tex",
+					"settings":
+					{
+						"buffer_size": 1602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								383,
+								383
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/sty/mystyle.sty",
+					"settings":
+					{
+						"buffer_size": 2280,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								571,
+								571
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/LaTeX/TeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/matteoLacki/Dropbox/Science/MassSpectrometry/DeGaulle/recomb/tex/approximations.tex",
+					"settings":
+					{
+						"buffer_size": 20372,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19721,
+								19721
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6674.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1538,18 +1771,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -1561,7 +1787,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 209.0
+		"height": 249.0
 	},
 	"output.find_results":
 	{
@@ -1577,6 +1803,78 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"algo",
+				"tex/algorithms.tex"
+			],
+			[
+				"spe",
+				"bib/spectrometry.bib"
+			],
+			[
+				"my",
+				"sty/mystyle.sty"
+			],
+			[
+				"pro",
+				"bib/probability.bib"
+			],
+			[
+				"to",
+				"bib/topology.bib"
+			],
+			[
+				"de",
+				"DeGaulle.tex"
+			],
+			[
+				"spec",
+				"bib/spectrometry.bib"
+			],
+			[
+				"intro",
+				"tex/intro.tex"
+			],
+			[
+				"discussion",
+				"tex/discussionsAndConclusions.tex"
+			],
+			[
+				"prob",
+				"bib/probability.bib"
+			],
+			[
+				"ac",
+				"tex/acknowledgments.tex"
+			],
+			[
+				"in",
+				"tex/intro.tex"
+			],
+			[
+				"alg",
+				"tex/algorithms.tex"
+			],
+			[
+				"s",
+				"bib/spectrometry.bib"
+			],
+			[
+				"sp",
+				"bib/spectrometry.bib"
+			],
+			[
+				"a",
+				"tex/acknowledgments.tex"
+			],
+			[
+				"ack",
+				"tex/acknowledgments.tex"
+			],
+			[
+				"try",
+				"bib/try.bib"
+			],
 			[
 				"stic",
 				"Rproject/Fitters/StickFitter.R"
@@ -1672,10 +1970,6 @@
 			[
 				"bio",
 				"Rproject/Warehouses/biochemicalInfo.R"
-			],
-			[
-				"s",
-				"Rproject/substanceP.R"
 			],
 			[
 				"datad",
@@ -1776,10 +2070,6 @@
 			[
 				"masst",
 				"Rproject/MassTodon.R"
-			],
-			[
-				"my",
-				"vignettes/mystyle.sty"
 			],
 			[
 				"m",
