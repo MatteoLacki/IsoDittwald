@@ -1,29 +1,24 @@
 %!TEX root = ../DeGaulle.tex
 \section{Algorithms}
 
-
-One can treat Algorithm \ref{DeFine Basic Algo} as a subroutine for Algorithm \ref{DeFine Parellely Algo}.
-
-\begin{algorithm}\caption{DeFine Basic}
-\begin{algorithmic}[1]\label{DeFine Basic Algo}
-
-	\State 	\textbf{inputs}	\smallMolecule, K 
-	\State 	Get mode candidate.
+Result \ref{Fine structure law} opens up a new way to do calculations: by using the approximation one reduces the complexity of Problem \ref{Problem of finding LFS_K configurations.} to that of studying $\mathbb{L}$. Usually {\it Lucky Law} is less dimensional, and so the reduction is significant. In proteomics, one easily establishes the set all possible configurations $S$ in a double {\it for loop} and calculates their probabilites. In general, the problem could be approached using a tailored MCMC algorithm defined on the space of Linear Diophantine Equations.   
 	
-	\State  \textbf{Shit}.
-\end{algorithmic}	
-\end{algorithm}
+Having enumerated the {\it lucky} configurations, we order them by descending probability and select the critical $L\%$-set $S^*$. For each configuration $(k_1, k_2, k_4)$ in $S^*$ one can then independently find the $M\%$ and $B\%$-critical sets of the underlying multinomial distributions. We achieve this by controlled {\it breadth first search}: the configurations of the multinomial distribution can be thought of vertices $V$ of an underlying graph, $G = (V,E)$. Two configurations $\bm{v}, \bm{w} \in V$ define an edge $(\bm{v}, \bm{w}) \in E$ if and only if $\exists_{i \not= j} v_i = w_i + 1$ and $v_j = w_j - 1$. One then starts the algoritm in the vicinity of the mode of current $\mathrm{Multi}\left( p_1, \dots, p_w; n \right)$: as proxy, we use the point with coordinates equal to the floor of $n p_i + 1$. More elaborate set of candidates can be used, see \cite{Gall2003DeterminationOfTheModesOfMultinomial}. One then enlists all the neighbours of the initial node and puts the on a {\it max-priority queue}, see \cite{Cormen2001IntroductionToAlgorithms}. One then recursively looks at neighbours of the top-priority configuration, checks their probabiliy and enqueues them. In the same time, using a hash-table, one must store information on the visited configurations to avoid multiple visits to the same node. Observe that in case of molecules containing elements with only one isotope, e.g. \smallMolecule, this step alone would suffice to solve the problem, as showed in Result \ref{Multinomial Result}.
 
+Having obtained the critical sets we calculate their exterior product and obtain a set of valid configurations in $LFS_K$. We calculate then their true probability under $\MK$ and their mass. Finally, we merge all obtained solutions.
 
-\begin{algorithm}\caption{DeFine Parallely}
-\begin{algorithmic}[1]\label{DeFine Parellely Algo}
+We call the above algorithm {\sc DeFine}. A prototype of it has been implemented in \textbf{R}.	Fig. \ref{figure: Coverage} in  shows how well the prototype manages in solving Problem \ref{Problem of finding LFS_K configurations.}. Observe also, that the {\it for loop} can be carried out in parallel.
+
+\begin{algorithm}\caption{\textsc{DeFine}}
+\begin{algorithmic}[1]\label{DeFine Parallely}
 	\State	\textbf{require:} \molecule, $K, L, M, B$
+	\State 	Establish $\lambda_\cem{^{13}C}, \lambda_\cem{^{2} H}, \lambda_\cem{^{15}N}, \lambda_\cem{^{17}O}, \lambda_\cem{^{33}S}, \mu, \gamma $
 	\State 	Find  		$S = \{ (k_1, k_2, k_4) : k_1 + 2 k_2 + 4 k_4 = K \}$.
 	\State 	Find 		$P = \{ \prob(\bm{k}) : \bm{k} \in S \}$
 	\State 	Order $S$ using $P$ and select the top $L \%$. Call result $S^*$.
 	
 
-	\FORALLP{ $\bm{k} \in S^*$}
+	\FORALL{ $\bm{k} \in S^*$}
 		\State $\mathfrak{M}$ := Critical $M\%$ set of $\mathrm{Multi} \left(
 				\frac{ \lambda_\cem{^{13}C} }{ \mu }, 
 				\frac{ \lambda_\cem{^{2} H} }{ \mu }, 
@@ -42,7 +37,7 @@ One can treat Algorithm \ref{DeFine Basic Algo} as a subroutine for Algorithm \r
 
 		% \State $\mathfrak{C} \,\,\,:= \mathfrak{M} \otimes \mathfrak{B} \otimes \{ k_4 \}$
 
-		\State 	Result := 
+		\State 	Partial Result := 
 			$\Bigg\{ 
 				\Big( 
 					\mathbb{M}( \bm{x}, \bm{y}, z ), 
@@ -52,7 +47,8 @@ One can treat Algorithm \ref{DeFine Basic Algo} as a subroutine for Algorithm \r
 				\bm{y} \in \mathfrak{B}, 
 				z = k_4  
 			\Bigg\}$
-	\ENDFAP
+	\ENDFORALL
 
+	\State 	Result := $\bigcup $ Partial Results.
 \end{algorithmic}	
 \end{algorithm}

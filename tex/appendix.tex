@@ -24,3 +24,17 @@ A simple calculation using both \eqref{convergence in probability on good sets} 
 \begin{equation*}
 	\int f \mathrm{d} \mu^{[n]}_A =  \frac{ \int f \mathrm{d} \mu^{[n]} }{ \mu^{[n]}(A) } \underset{n \to \infty}{\xrightarrow{\hspace*{1cm}}} \frac{ \int f \mathrm{d} \mu }{ \mu(A) } = \int f \mathrm{d} \mu\,.
 \end{equation*}
+
+\subsection*{General form of the \emph{Lucky Law}}
+
+If the compound contains elements with their {\it additional neutron acceptances} in set $I = \{ 1, 2, 4\}$, formula \eqref{simple lucky law} generalizes to 
+\begin{equation*}
+	\mathbb{L}( \bm{k} ) = 
+	\frac{ 
+		\prod_{i \in I} \frac{ \mu_i^{k_i} }{ {k_i}! } 
+	}{ 
+		\underset{ \{ \bm{k}^* :  \sum_{i \in I} i k_i^*  = K \} }{\sum} 	
+		\prod_{i \in I} \frac{ \mu_i^{k_i^*} }{ {k_i^*}! }	
+	},
+\end{equation*}
+where $\bm{k}$ is an ordered tuple indexed by $I$. Nature poses a natural limit on the complexity of the {\it lucky law}, as at most  $\# I \leq 10$\todo{Ascertain that asking Frederik.}.

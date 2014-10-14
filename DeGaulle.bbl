@@ -24,10 +24,9 @@ Claesen, J., Dittwald, P., Burzykowski, T., Valkenborg, D.: {An Efficient
   Center-Masses}. Journal of The American Society for Mass Spectrometry  23(4),
    753--763 (Apr 2012), \url{http://dx.doi.org/10.1007/s13361-011-0326-2}
 
-\bibitem{Dittwald2014OnTheFineIsotopicDistribution}
-Dittwald, P., Valkenborg, D., Claesen, J., Rockwood, A., Gambin, A.: {O}n the
-  fine isotopic distribution and limits to resolution in mass spectrometry
-  (2014), work in progress.
+\bibitem{Cormen2001IntroductionToAlgorithms}
+Cormen, T.H., Stein, C., Rivest, R.L., Leiserson, C.E.: Introduction to
+  Algorithms. McGraw-Hill Higher Education, 2nd edn. (2001)
 
 \bibitem{Dugundji1966Topology}
 Dugundji, J.: Topology. Allyn and Bacon series in advanced mathematics, Allyn
@@ -36,6 +35,11 @@ Dugundji, J.: Topology. Allyn and Bacon series in advanced mathematics, Allyn
 \bibitem{Eidhammer2008ComputationalMethodsInMassSpectrometry}
 Eidhammer, I., Flikka, K., Martens, L., Mikalsen, S.O.: Computational Methods
   for Mass Spectrometry Proteomics. Wiley-Interscience (2007)
+
+\bibitem{Gall2003DeterminationOfTheModesOfMultinomial}
+Gall, F.L.: Determination of the modes of a multinomial distribution.
+  Statistics \& Probability Letters  62(4),  325 -- 333 (2003),
+  \url{http://www.sciencedirect.com/science/article/pii/S0167715202004303}
 
 \bibitem{Hughey2001KendrickMassDefect}
 Hughey, C.A., Hendrickson, C.L., Rodgers, R.P., Marshall, A.G., Qian, K.:

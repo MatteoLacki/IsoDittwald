@@ -3,52 +3,54 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: DeGaulle.aux
 The style file: ./bst/splncs03.bst.bst
 A level-1 auxiliary file: ./tex/tables.aux
+A level-1 auxiliary file: ./tex/figures.aux
 A level-1 auxiliary file: ./tex/appendix.aux
 Database file #1: ./bib/spectrometry.bib
 Database file #2: ./bib/probability.bib
 Database file #3: ./bib/topology.bib
 Database file #4: ./bib/generalMath.bib
+Database file #5: ./bib/computerSciences.bib
 Warning--empty journal in Agnarsson2002OnTheSylvesterDenumerants
 Warning--there's a number but no volume in Agnarsson2002OnTheSylvesterDenumerants
-You've used 18 entries,
+You've used 19 entries,
             2785 wiz_defined-function locations,
-            740 strings with 9158 characters,
-and the built_in function-call counts, 10073 in all, are:
-= -- 834
-> -- 281
-< -- 24
-+ -- 116
+            751 strings with 9419 characters,
+and the built_in function-call counts, 10673 in all, are:
+= -- 886
+> -- 283
+< -- 26
++ -- 117
 - -- 98
-* -- 672
-:= -- 1273
-add.period$ -- 16
-call.type$ -- 18
-change.case$ -- 101
+* -- 706
+:= -- 1338
+add.period$ -- 18
+call.type$ -- 19
+change.case$ -- 103
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 908
-empty$ -- 887
+cite$ -- 21
+duplicate$ -- 965
+empty$ -- 955
 format.name$ -- 109
-if$ -- 2200
+if$ -- 2347
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 185
-newline$ -- 59
-num.names$ -- 36
-pop$ -- 269
+int.to.str$ -- 19
+missing$ -- 196
+newline$ -- 62
+num.names$ -- 38
+pop$ -- 284
 preamble$ -- 1
-purify$ -- 85
+purify$ -- 87
 quote$ -- 0
-skip$ -- 293
+skip$ -- 319
 stack$ -- 0
-substring$ -- 629
-swap$ -- 560
-text.length$ -- 24
+substring$ -- 676
+swap$ -- 596
+text.length$ -- 26
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 64
+type$ -- 66
 warning$ -- 2
-while$ -- 81
-width$ -- 20
-write$ -- 190
+while$ -- 86
+width$ -- 21
+write$ -- 203
 (There were 2 warnings)
