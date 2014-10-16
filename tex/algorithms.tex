@@ -6,7 +6,7 @@ Result \ref{Fine structure law} opens up a new way to do calculations: by using 
 Having enumerated the {\it lucky} configurations, we order them by descending probability and select the critical $L\%$-set $S^*$. For each configuration $(k_1, k_2, k_4)$ in $S^*$ one can then independently find the $M\%$ and $B\%$-critical sets of the underlying multinomial distributions. This can be done in many ways, see \textbf{Appendix}.
 
 
-Having obtained the critical sets we calculate their exterior product and obtain a set of valid configurations in $LFS_K$. We calculate then their true probability under $\MK$ and their mass, $M$. The mass of a configuration is obtained trivially.  Finally, we merge all obtained solutions.
+Having obtained the critical sets we calculate their exterior product and obtain a set of valid configurations in $LFS_K$. We calculate then their true probability under $\MK$ and their mass, $M$. The mass of a configuration is obtained with \eqref{Equatransneutronic masses eq}.  Finally, we merge all obtained solutions.
 
 We call the above algorithm {\sc DeFine}. A prototype of it has been implemented in \textbf{R}.	Fig. \ref{figure: Coverage} in  shows how well the prototype manages in solving Problem \ref{Problem of finding LFS_K configurations.}. Observe also, that the {\it for loop} can be carried out in parallel.
 

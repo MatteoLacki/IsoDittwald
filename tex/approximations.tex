@@ -242,3 +242,33 @@ To calculate $\QK$ it remains to divide \eqref{QK Nominator} by $\QQ( LFS_K )$. 
 \end{result}
 
 Otherwise stated, the approximative distribution is a mixture of independent multinomial distributions weighted by the $\mathbb{L}$ distribution, which, for lack of name, we shall call the {\it lucky law}. Under the Poisson approximation, the {\it lucky law} is the resulting law on the {\it equatransneutronic configurations}. General expression is to be found in the \textbf{Appendix}.
+
+As pointed out in \cite{Olson2009Calculations}, it is of interest to calculate also the masses of the 
+{\it equatransneutronic groups}. With Result \ref{Fine structure law}, we can provide extremely tractable approximations thereof. 
+\begin{result}\label{Equatransneutronic Masses result}
+	The approximative mass of a \emph{ transneutronic group} $(k_1, k_2, k_4)$ for compound \molecule\, is equal to
+	{\small
+		\begin{equation}\label{Equatransneutronic masses eq}
+		\begin{gathered}
+			\frac{k_1}{\mu}
+			\Big( 
+				{\Delta M}_\cem{^{13}C} \lambda_\cem{^{13}C} 	+ 
+				{\Delta M}_\cem{^{2}H} 	\lambda_\cem{^{2}H} 	+ 
+				{\Delta M}_\cem{^{15}N} \lambda_\cem{^{15}N} 	+ 
+				{\Delta M}_\cem{^{18}O} \lambda_\cem{^{18}O} 	+  
+				{\Delta M}_\cem{^{33}S} \lambda_\cem{^{33}S} 
+			\Big)\\
+			+\frac{k_2}{\eta}
+			\Big( 
+				{\Delta M}_\cem{^{18}O} \lambda_\cem{^{18}O} 	+ 
+				{\Delta M}_\cem{^{34}S} \lambda_\cem{^{34}S} 
+			\Big) + 
+			\frac{k_4}{\gamma} {\Delta M}_\cem{^{36}S} \lambda_\cem{^{36}S} + 
+			\textsc{Mono}_{ \cem{c}, \cem{h}, \cem{n}, \cem{o}, \cem{s} }, 
+		\end{gathered}		
+		\end{equation}}
+	where $\Delta M$ stands for mass difference between a given isotope and the lighest isotope for that element, and \textsc{Mono} stands for the monoisotopic mass.   
+\end{result}
+\begin{proof}
+	It follows from the expression for multinomial law's mean, see \cite{Roos1999OnTheRateOfMultivariatePoissonConvergence}.
+\end{proof}

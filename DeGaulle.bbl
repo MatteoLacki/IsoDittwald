@@ -9,20 +9,18 @@ Agnarsson, G.: On the sylvester denumerants for general restricted partitions.
 \bibitem{Bobkov1998OnModifiedLogarithmicSobolev}
 Bobkov, S., Ledoux, M.: On modified logarithmic sobolev inequalities for
   bernoulli and poisson measures. Journal of Functional Analysis  156(2),  347
-  -- 365 (1998),
-  \url{http://www.sciencedirect.com/science/article/pii/S0022123697931876}
+  -- 365 (1998)
 
 \bibitem{Breen2000AutomaticPeak}
 Breen, E.J., Hopwood, F.G., Williams, K.L., Wilkins, M.R.: Automatic poisson
   peak harvesting for high throughput protein identification. Electrophoresis
-  21(11),  2243--2251 (2000),
-  \url{http://dx.doi.org/10.1002/1522-2683(20000601)21:11<2243::AID-ELPS2243>3.0.CO;2-K}
+  21(11),  2243--2251 (2000)
 
 \bibitem{Claesen2012Efficient}
 Claesen, J., Dittwald, P., Burzykowski, T., Valkenborg, D.: {An Efficient
   Method to Calculate the Aggregated Isotopic Distribution and Exact
   Center-Masses}. Journal of The American Society for Mass Spectrometry  23(4),
-   753--763 (Apr 2012), \url{http://dx.doi.org/10.1007/s13361-011-0326-2}
+   753--763 (Apr 2012)
 
 \bibitem{Cormen2001IntroductionToAlgorithms}
 Cormen, T.H., Stein, C., Rivest, R.L., Leiserson, C.E.: Introduction to
@@ -36,7 +34,7 @@ Dittwald, P., Claesen, J., Burzykowski, T., Valkenborg, D., Gambin, A.:
 
 \bibitem{Dugundji1966Topology}
 Dugundji, J.: Topology. Allyn and Bacon series in advanced mathematics, Allyn
-  and Bacon, Boston (1966), \url{http://opac.inria.fr/record=b1079460}
+  and Bacon, Boston (1966)
 
 \bibitem{Eidhammer2008ComputationalMethodsInMassSpectrometry}
 Eidhammer, I., Flikka, K., Martens, L., Mikalsen, S.O.: Computational Methods
@@ -44,8 +42,7 @@ Eidhammer, I., Flikka, K., Martens, L., Mikalsen, S.O.: Computational Methods
 
 \bibitem{Gall2003DeterminationOfTheModesOfMultinomial}
 Gall, F.L.: Determination of the modes of a multinomial distribution.
-  Statistics \& Probability Letters  62(4),  325 -- 333 (2003),
-  \url{http://www.sciencedirect.com/science/article/pii/S0167715202004303}
+  Statistics \& Probability Letters  62(4),  325 -- 333 (2003)
 
 \bibitem{Hughey2001KendrickMassDefect}
 Hughey, C.A., Hendrickson, C.L., Rodgers, R.P., Marshall, A.G., Qian, K.:
@@ -69,17 +66,15 @@ Kingman, J.F.C.: Poisson processes, Oxford Studies in Probability, vol.~3. The
 \bibitem{Olson2009Calculations}
 Olson, M., Yergey, A.: Calculation of the isotope cluster for polypeptides by
   probability grouping. Journal of the American Society for Mass Spectrometry
-  20(2),  295--302 (2009), \url{http://dx.doi.org/10.1016/j.jasms.2008.10.007}
+  20(2),  295--302 (2009)
 
 \bibitem{Rockwood1995Relationship}
 Rockwood, A.L.: {Relationship of Fourier transforms to isotope distribution
-  calculations}. Rapid Commun. Mass Spectrom.  9(1),  103--105 (jan 1995),
-  \url{http://dx.doi.org/10.1002/rcm.1290090122}
+  calculations}. Rapid Commun. Mass Spectrom.  9(1),  103--105 (jan 1995)
 
 \bibitem{Roos1999OnTheRateOfMultivariatePoissonConvergence}
 Roos, B.: On the rate of multivariate poisson convergence. Journal of
-  Multivariate Analysis  69(1),  120 -- 134 (1999),
-  \url{http://www.sciencedirect.com/science/article/pii/S0047259X98917894}
+  Multivariate Analysis  69(1),  120 -- 134 (1999)
 
 \bibitem{Rosman1997IsotopicCompositions}
 Rosman, K., Taylor, P.: {{I}sotopic Compositions of the Elements 1997}. J.
@@ -94,13 +89,11 @@ Senko, M.W., Beu, S.C., McLaffertycor, F.W.: {{D}etermination of monoisotopic
 Valkenborg, D., Assam, P., Thomas, G., Krols, L., Kas, K., Burzykowski, T.:
   Using a poisson approximation to predict the isotopic distribution of
   sulphur-containing peptides in a peptide-centric proteomic approach. Rapid
-  Communications in Mass Spectrometry  21(20),  3387--3391 (2007),
-  \url{http://www.scopus.com/inward/record.url?eid=2-s2.0-35349002401&partnerID=40&md5=d68ac3d300587b84f183dcd1c7f508cd},
-  cited By (since 1996)15
+  Communications in Mass Spectrometry  21(20),  3387--3391 (2007)
 
 \bibitem{Valkenborg2012Isotopic}
 Valkenborg, D., Mertens, I., Lemi\`{e}re, F., Witters, E., Burzykowski, T.:
   {The isotopic distribution conundrum.} Mass spectrometry reviews  31(1),
-  96--109 (2012), \url{http://dx.doi.org/10.1002/mas.20339}
+  96--109 (2012)
 
 \end{thebibliography}
