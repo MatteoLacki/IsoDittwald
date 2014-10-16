@@ -1,21 +1,41 @@
 %!TEX root = ../DeGaulle.tex
-\section{Discussion and Conclusions}
+\section{Conclusions}
 
-	The presented algorithm is by far a suboptimal way of handing Problem \ref{Problem of finding LFS_K configurations.}. In fact, more elaborate algorithms could come into being by more careful exploration of the space of configuration of the approximative distribution. However, we judge that all such algorithms could share the idea of using, in one way or another, the approach developed in {\sc Define}: namely, start by choosing a configuration presumed to be in vicinity of the mode of $\MK$, and proceed by a controled {\it breadth first search} until either a certain number of configurations is reached, or they already gathered ones already have enough of probability upon them.
+	In the present paper an original approach to doing calculations on different levels of isotopic fine structure aggregation hierarchy was proposed. To our best knowledge, it is the first use of Poisson approximation for algorithmic purposes,   resulting already in two elegant algorithms, \textsc{DeFine} and \textsc{DeFiner}, for efficient exploration of the state space of possible isotopic configurations.  
 
-	A different problem to those mentioned before could be solved in this way to, namely:  
+	\textsc{DeFine} is a minimalistic, yet extremely efficient way of calculating approximate probabilities of {\it equatransneutronic} clusters. \textsc{DeFiner} presents a simple but certainly suboptimal way of handing Problem \ref{Problem of finding LFS_K configurations.}; however, more efficient algorithms can easily come into being by more careful considerations on how to explore the approximative distribution $\QK$. 
 
-	\begin{Problem}\label{Big Problem}
-		Find a small set $C$ among all possible configurations, s.t. $\mathbb{M}(C) \approx 1$.
-	\end{Problem}
+	Figure \ref{figure: hierarchy} presents a detailed view of the hierarchical approach we take. The left pane contains the  aggregated isotopic distribution of \testAvergine, an $100$-avergine, obtained with the {\sc BRAIN} algorithm \cite{Dittwald2013BRAIN}. The lower panel zooms into the region of the highest aggregated peak. This peak is then desaggregated into {\it equatransneutronic} groupings. Finally, one notices many small black peaks corresponding to the finest structure obtainable. It is by clustering and statistical centroiding of these peaks that one obtains all the others. 
 
-	The candidate for the biggest peak would by then be the product of modes of each multinomial model in \eqref{product of multinomials}.
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\textwidth]{./img/hierarchyHorizontal}
+ \caption{ Peaks in the left pane are probabilities of different $LFS_K$ groups, $K = 0,\dots,13$. In the right pane masses of configurations in $LFS_6$ are plotted: it zooms the region around the tallest peak in the left pane, which is also ploted there for reference. By appropriately aggregating \textsc{DeFiner}'s results, i.e. small black peaks, we calculate the {\it equatransneutronic} precise, non-approximated probabilities. We compare them with \textsc{DeFine}'s results obtained {\it via} the Poisson approximation. There are no apparent differences between them. }
+ \label{figure: hierarchy}
+\end{figure}
 
-	This problem has been more efficiently be solved by different approaches, e.g. by the use of Fourier transform methods, see \todo{Find Rockwood's publication.}. 
+
+	The potential applications of our results are numerous. For example, having detected a critical set of configurations $A$, s.t. $\MK(A) \approx 95\%$, one might envisage the problem of finding an optimal binning procedure to match real data from a mass spectrometer. In this way, one could measure the machine's resolution without any need to refer to somewhat underdefined notions of {\it p percent valley} and {\it peak width}, see \cite{Eidhammer2008ComputationalMethodsInMassSpectrometry}. 
 
 
-	Note also that, at least in case of {\it Time of Flight} analyzers, there is an additional advantage of studying the $LFS_K$ configurations over those gathered in the above mentioned set $C$: it is known, that in these instruments the resolution depends on the mass of analyte, see \cite{Eidhammer2008ComputationalMethodsInMassSpectrometry}. It is more difficult to differentiate correctly between molecules with similar masses, when both of them are big. Models solving Problem \ref{Big Problem} would have to add some sort of binning procedure with bin width being a function of mass, that not being straightforward to model. Thanks to the localisation in the mass to charge domain, while studying $LFS_K$ we simply neglect that sort of problem.
+	Moreover, at least in case of {\it Time of Flight} analyzers, there is an additional advantage of studying the {\it localised fine structure}: it is known, that in these instruments the resolution depends on the mass of analyte, see \cite{Eidhammer2008ComputationalMethodsInMassSpectrometry}. It is more difficult to differentiate correctly between molecules with similar masses, when both of them are big. 
 
-	In general, modelling probabilistically the fine structure of the isotopic envelope could serve in an automatic peptide identification procedure. Differences in the fine structure with $K^*$ s.t. $\MM(LSF_K^*) = \max_K \MM(LSF_K)$ could be particularly informative. However, the design of an appropriate scheme is way beyond the scope of this article.
 
-	Note also, that as a possible application of finding a critical $A$ set amounting to, such that $\MM(A) \approx 95\%$, one might envisage the problem of finding an optimal binning procedure to match real data resulting from a particular mass spectrometer. In this way, one could measure the machine's resolution without any need to refer to somewhat underdefined notions of {\it p percent valley} and {\it peak width}, see \cite{Eidhammer2008ComputationalMethodsInMassSpectrometry}.   
+	% However, we judge that all such algorithms could share the idea of using, in one way or another, the approach developed in {\sc Define}: namely, start by choosing a configuration presumed to be in vicinity of the mode of $\MK$, and proceed by a controled {\it breadth first search} until either a certain number of configurations is reached, or they already gathered ones already have enough of probability upon them.
+
+	% A different problem to those mentioned before could be solved in this way to, namely:  
+
+	% \begin{Problem}\label{Big Problem}
+	% 	Find a small set $C$ among all possible configurations, s.t. $\mathbb{M}(C) \approx 1$.
+	% \end{Problem}
+
+	% The candidate for the biggest peak would by then be the product of modes of each multinomial model in \eqref{product of multinomials}.
+
+	% This problem has been more efficiently be solved by different approaches, e.g. by the use of Fourier transform methods, see \todo{Find Rockwood's publication.}. 
+
+
+
+	% Models solving Problem \ref{Big Problem} would have to add some sort of binning procedure with bin width being a function of mass, that not being straightforward to model. Thanks to the localisation in the mass to charge domain, while studying $LFS_K$ we simply neglect that sort of problem.
+
+
+	Finally, modelling probabilistically the fine structure of the isotopic envelope could serve in an automatic peptide identification procedure. Differences in the fine structure with $K^*$ s.t. $\mathbb{M}_{K^*}(LSF_{K^*}) = \max_K \MK(LSF_K)$ could be particularly informative. However, the design of an appropriate scheme is way beyond the scope of this article.

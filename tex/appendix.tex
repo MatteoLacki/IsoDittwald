@@ -38,3 +38,8 @@ If the compound contains elements with their {\it additional neutron acceptances
 	},
 \end{equation*}
 where $\bm{k}$ is an ordered tuple indexed by $I$. Nature poses a natural limit on the complexity of the {\it lucky law}, as at most  $\# I \leq 10$\todo{Ascertain that asking Frederik.}.
+
+
+\subsection*{Obtaining $M\%$ critical sets of the Multinomial Distribution}
+
+We achieve this by controlled {\it breadth first search}: the configurations of the multinomial distribution can be thought of vertices $V$ of an underlying graph, $G = (V,E)$. Two configurations $\bm{v}, \bm{w} \in V$ define an edge $(\bm{v}, \bm{w}) \in E$ if and only if $\exists_{i \not= j} v_i = w_i + 1$ and $v_j = w_j - 1$. One then starts the algoritm in the vicinity of the mode of current $\mathrm{Multi}\left( p_1, \dots, p_w; n \right)$: as proxy, we use the point with coordinates equal to the floor of $n p_i + 1$. More elaborate set of candidates can be used, see \cite{Gall2003DeterminationOfTheModesOfMultinomial}. One then enlists all the neighbours of the initial node and puts the on a {\it max-priority queue}, see \cite{Cormen2001IntroductionToAlgorithms}. One then recursively looks at neighbours of the top-priority configuration, checks their probabiliy and enqueues them. In the same time, using a hash-table, one must store information on the visited configurations to avoid multiple visits to the same node. Observe that in case of molecules containing elements with only one isotope, e.g. \smallMolecule, this step alone would suffice to solve the problem, as showed in Result \ref{Multinomial Result}.

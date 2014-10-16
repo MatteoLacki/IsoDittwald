@@ -3,15 +3,21 @@
 
 Result \ref{Fine structure law} opens up a new way to do calculations: by using the approximation one reduces the complexity of Problem \ref{Problem of finding LFS_K configurations.} to that of studying $\mathbb{L}$. Usually {\it Lucky Law} is less dimensional, and so the reduction is significant. In proteomics, one easily establishes the set all possible configurations $S$ in a double {\it for loop} and calculates their probabilites. In general, the problem could be approached using a tailored MCMC algorithm defined on the space of Linear Diophantine Equations.   
 	
-Having enumerated the {\it lucky} configurations, we order them by descending probability and select the critical $L\%$-set $S^*$. For each configuration $(k_1, k_2, k_4)$ in $S^*$ one can then independently find the $M\%$ and $B\%$-critical sets of the underlying multinomial distributions. We achieve this by controlled {\it breadth first search}: the configurations of the multinomial distribution can be thought of vertices $V$ of an underlying graph, $G = (V,E)$. Two configurations $\bm{v}, \bm{w} \in V$ define an edge $(\bm{v}, \bm{w}) \in E$ if and only if $\exists_{i \not= j} v_i = w_i + 1$ and $v_j = w_j - 1$. One then starts the algoritm in the vicinity of the mode of current $\mathrm{Multi}\left( p_1, \dots, p_w; n \right)$: as proxy, we use the point with coordinates equal to the floor of $n p_i + 1$. More elaborate set of candidates can be used, see \cite{Gall2003DeterminationOfTheModesOfMultinomial}. One then enlists all the neighbours of the initial node and puts the on a {\it max-priority queue}, see \cite{Cormen2001IntroductionToAlgorithms}. One then recursively looks at neighbours of the top-priority configuration, checks their probabiliy and enqueues them. In the same time, using a hash-table, one must store information on the visited configurations to avoid multiple visits to the same node. Observe that in case of molecules containing elements with only one isotope, e.g. \smallMolecule, this step alone would suffice to solve the problem, as showed in Result \ref{Multinomial Result}.
+Having enumerated the {\it lucky} configurations, we order them by descending probability and select the critical $L\%$-set $S^*$. For each configuration $(k_1, k_2, k_4)$ in $S^*$ one can then independently find the $M\%$ and $B\%$-critical sets of the underlying multinomial distributions. This can be done in many ways, see \textbf{Appendix}.
 
-Having obtained the critical sets we calculate their exterior product and obtain a set of valid configurations in $LFS_K$. We calculate then their true probability under $\MK$ and their mass. Finally, we merge all obtained solutions.
+
+Having obtained the critical sets we calculate their exterior product and obtain a set of valid configurations in $LFS_K$. We calculate then their true probability under $\MK$ and their mass, $M$. The mass of a configuration is obtained trivially.  Finally, we merge all obtained solutions.
 
 We call the above algorithm {\sc DeFine}. A prototype of it has been implemented in \textbf{R}.	Fig. \ref{figure: Coverage} in  shows how well the prototype manages in solving Problem \ref{Problem of finding LFS_K configurations.}. Observe also, that the {\it for loop} can be carried out in parallel.
 
-\begin{algorithm}\caption{\textsc{DeFine}}
-\begin{algorithmic}[1]\label{DeFine Parallely}
-	\State	\textbf{require:} \molecule, $K, L, M, B$
+Say that the algorithm resulted in set $A$ of configurations. One can measure \textsc{DeFiner}'s perfomance simply by calculating the overall $\textsc{Coverage} := \MK(A)$; the higher it is, the better we get in solving Problem \ref{Problem of finding LFS_K configurations.}.
+
+
+
+\begin{algorithm}\caption{\textsc{DeFiner}}
+\begin{algorithmic}\label{DeFine Parallely}
+	\State	\textbf{Input:} \molecule, $K, L, M, B$
+	\State 	\textbf{Output:} List of pairs (Probability, Mass ), Coverage.
 	\State 	Establish $\lambda_\cem{^{13}C}, \lambda_\cem{^{2} H}, \lambda_\cem{^{15}N}, \lambda_\cem{^{17}O}, \lambda_\cem{^{33}S}, \mu, \gamma $
 	\State 	Find  		$S = \{ (k_1, k_2, k_4) : k_1 + 2 k_2 + 4 k_4 = K \}$.
 	\State 	Find 		$P = \{ \prob(\bm{k}) : \bm{k} \in S \}$
@@ -37,18 +43,25 @@ We call the above algorithm {\sc DeFine}. A prototype of it has been implemented
 
 		% \State $\mathfrak{C} \,\,\,:= \mathfrak{M} \otimes \mathfrak{B} \otimes \{ k_4 \}$
 
-		\State 	Partial Result := 
-			$\Bigg\{ 
-				\Big( 
-					\mathbb{M}( \bm{x}, \bm{y}, z ), 
-					M( \bm{x}, \bm{y}, z )
-				\Big) : 
-				\bm{x} \in \mathfrak{M}, 
-				\bm{y} \in \mathfrak{B}, 
-				z = k_4  
-			\Bigg\}$
+		\State 	Partial Result := {\small
+		\begin{equation*}
+				\Bigg\{ 
+						\Big( 
+							\MK ( \{\bm{x}, \bm{y}, z \}), 
+							M( \bm{x}, \bm{y}, z )
+						\Big) : \bm{x} = (\cem{c_1}, \cem{h_1}, \cem{n_1}, \cem{o_1}, \cem{s_1} ) \in \mathfrak{M},\quad \bm{y} = (\cem{o_2}, \cem{s_2}) \in \mathfrak{B},\quad z = \cem{s_4}  \Bigg\}			
+		\end{equation*}}
+		% \State 	Partial Result := 
+		% 	$\Bigg\{ 
+		% 		\Big( 
+		% 			\MK ( \{\bm{x}, \bm{y}, z \}), 
+		% 			M( \bm{x}, \bm{y}, z )
+		% 		\Big) : 
+		% 	$
+		% \State\quad$\bm{x} = (\cem{c_1}, \cem{h_1}, \cem{n_1}, \cem{o_1}, \cem{s_1} ) \in \mathfrak{M},\quad \bm{y} = (\cem{o_2}, \cem{s_2}) \in \mathfrak{B},\quad z = \cem{s_4}  \Bigg\}$
 	\ENDFORALL
 
 	\State 	Result := $\bigcup $ Partial Results.
+	\State 	Find {\sc Coverage}.
 \end{algorithmic}	
 \end{algorithm}

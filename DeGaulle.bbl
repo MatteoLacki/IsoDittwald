@@ -28,6 +28,12 @@ Claesen, J., Dittwald, P., Burzykowski, T., Valkenborg, D.: {An Efficient
 Cormen, T.H., Stein, C., Rivest, R.L., Leiserson, C.E.: Introduction to
   Algorithms. McGraw-Hill Higher Education, 2nd edn. (2001)
 
+\bibitem{Dittwald2013BRAIN}
+Dittwald, P., Claesen, J., Burzykowski, T., Valkenborg, D., Gambin, A.:
+  {{B}{R}{A}{I}{N}: a universal tool for high-throughput calculations of the
+  isotopic distribution for mass spectrometry}. Anal. Chem.  85(4),  1991--1994
+  (Feb 2013)
+
 \bibitem{Dugundji1966Topology}
 Dugundji, J.: Topology. Allyn and Bacon series in advanced mathematics, Allyn
   and Bacon, Boston (1966), \url{http://opac.inria.fr/record=b1079460}

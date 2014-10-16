@@ -12,45 +12,45 @@ Database file #4: ./bib/generalMath.bib
 Database file #5: ./bib/computerSciences.bib
 Warning--empty journal in Agnarsson2002OnTheSylvesterDenumerants
 Warning--there's a number but no volume in Agnarsson2002OnTheSylvesterDenumerants
-You've used 19 entries,
+You've used 20 entries,
             2785 wiz_defined-function locations,
-            751 strings with 9419 characters,
-and the built_in function-call counts, 10673 in all, are:
-= -- 886
-> -- 283
-< -- 26
-+ -- 117
-- -- 98
-* -- 706
-:= -- 1338
-add.period$ -- 18
-call.type$ -- 19
-change.case$ -- 103
+            759 strings with 9673 characters,
+and the built_in function-call counts, 11468 in all, are:
+= -- 955
+> -- 310
+< -- 28
++ -- 128
+- -- 108
+* -- 762
+:= -- 1434
+add.period$ -- 19
+call.type$ -- 20
+change.case$ -- 111
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 965
-empty$ -- 955
-format.name$ -- 109
-if$ -- 2347
+cite$ -- 22
+duplicate$ -- 1032
+empty$ -- 1018
+format.name$ -- 120
+if$ -- 2520
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 196
-newline$ -- 62
-num.names$ -- 38
-pop$ -- 284
+int.to.str$ -- 20
+missing$ -- 209
+newline$ -- 65
+num.names$ -- 40
+pop$ -- 303
 preamble$ -- 1
-purify$ -- 87
+purify$ -- 94
 quote$ -- 0
-skip$ -- 319
+skip$ -- 342
 stack$ -- 0
-substring$ -- 676
-swap$ -- 596
-text.length$ -- 26
+substring$ -- 737
+swap$ -- 643
+text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 66
+type$ -- 70
 warning$ -- 2
-while$ -- 86
-width$ -- 21
-write$ -- 203
+while$ -- 92
+width$ -- 22
+write$ -- 213
 (There were 2 warnings)
