@@ -20,7 +20,7 @@ Breen, E.J., Hopwood, F.G., Williams, K.L., Wilkins, M.R.: Automatic poisson
 Claesen, J., Dittwald, P., Burzykowski, T., Valkenborg, D.: {An Efficient
   Method to Calculate the Aggregated Isotopic Distribution and Exact
   Center-Masses}. Journal of The American Society for Mass Spectrometry  23(4),
-   753--763 (Apr 2012)
+   753--763 (2012)
 
 \bibitem{Cormen2001IntroductionToAlgorithms}
 Cormen, T.H., Stein, C., Rivest, R.L., Leiserson, C.E.: Introduction to
@@ -30,7 +30,7 @@ Cormen, T.H., Stein, C., Rivest, R.L., Leiserson, C.E.: Introduction to
 Dittwald, P., Claesen, J., Burzykowski, T., Valkenborg, D., Gambin, A.:
   {{B}{R}{A}{I}{N}: a universal tool for high-throughput calculations of the
   isotopic distribution for mass spectrometry}. Anal. Chem.  85(4),  1991--1994
-  (Feb 2013)
+  (2013)
 
 \bibitem{Dugundji1966Topology}
 Dugundji, J.: Topology. Allyn and Bacon series in advanced mathematics, Allyn
@@ -48,7 +48,7 @@ Gall, F.L.: Determination of the modes of a multinomial distribution.
 Hughey, C.A., Hendrickson, C.L., Rodgers, R.P., Marshall, A.G., Qian, K.:
   {{K}endrick mass defect spectrum: a compact visual analysis for
   ultrahigh-resolution broadband mass spectra}. Anal. Chem.  73(19),
-  4676--4681 (Oct 2001)
+  4676--4681 (2001)
 
 \bibitem{Kallenberg2002FoundationsOfModernProbability}
 Kallenberg, O.: Foundations of modern probability. Probability and its
@@ -60,17 +60,25 @@ Kienitz, H.: {{M}ass Spectrometry and its Applications to Organic Chemistry}.
 
 \bibitem{Kingman1993PoissonProcesses}
 Kingman, J.F.C.: Poisson processes, Oxford Studies in Probability, vol.~3. The
-  Clarendon Press Oxford University Press, New York (1993), {O}xford Science
-  Publications
+  Clarendon Press Oxford University Press, New York (1993)
+
+\bibitem{Milandanovic2012OnTheUtilityOfIsotopicFineStructure}
+Miladinovi{\'c}, S.M., Kozhinov, A.N., Gorshkov, M.V., Tsybin, Y.O.: {{O}n the
+  utility of isotopic fine structure mass spectrometry in protein
+  identification}. Anal. Chem.  84(9),  4042--4051 (May 2012)
 
 \bibitem{Olson2009Calculations}
 Olson, M., Yergey, A.: Calculation of the isotope cluster for polypeptides by
   probability grouping. Journal of the American Society for Mass Spectrometry
   20(2),  295--302 (2009)
 
+\bibitem{Rockwood1995Ultrahighspeed}
+Rockwood, A.L., Van~Orden, S.L.: {{U}ltrahigh-speed calculation of isotope
+  distributions}. Anal. Chem.  68(13),  2027--2030 (1996)
+
 \bibitem{Rockwood1995Relationship}
 Rockwood, A.L.: {Relationship of Fourier transforms to isotope distribution
-  calculations}. Rapid Commun. Mass Spectrom.  9(1),  103--105 (jan 1995)
+  calculations}. Rapid Commun. Mass Spectrom.  9(1),  103--105 (1995)
 
 \bibitem{Roos1999OnTheRateOfMultivariatePoissonConvergence}
 Roos, B.: On the rate of multivariate poisson convergence. Journal of
@@ -81,9 +89,9 @@ Rosman, K., Taylor, P.: {{I}sotopic Compositions of the Elements 1997}. J.
   Phys. Chem. Ref. Data  27(6) (1998)
 
 \bibitem{Senko1995Determination}
-Senko, M.W., Beu, S.C., McLaffertycor, F.W.: {{D}etermination of monoisotopic
+Senko, M.W., Beu, S.C., McLafferty, F.W.: {{D}etermination of monoisotopic
   masses and ion populations for large biomolecules from resolved isotopic
-  distributions}. J. Am. Soc. Mass Spectrom.  6(4),  229--233 (Apr 1995)
+  distributions}. J. Am. Soc. Mass Spectrom.  6(4),  229--233 (1995)
 
 \bibitem{Valkenborg2007UsingPoisson}
 Valkenborg, D., Assam, P., Thomas, G., Krols, L., Kas, K., Burzykowski, T.:

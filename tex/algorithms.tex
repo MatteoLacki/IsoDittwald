@@ -1,30 +1,51 @@
 %!TEX root = ../DeGaulle.tex
 \section{Algorithms}
 
-Result \ref{Fine structure law} opens up a new way to do calculations: by using the approximation one reduces the complexity of Problem \ref{Problem of finding LFS_K configurations.} to that of studying $\mathbb{L}$. Usually {\it Lucky Law} is less dimensional, and so the reduction is significant. In proteomics, one easily establishes the set all possible configurations $S$ in a double {\it for loop} and calculates their probabilites. In general, the problem could be approached using a tailored MCMC algorithm defined on the space of Linear Diophantine Equations.   
-	
-Having enumerated the {\it lucky} configurations, we order them by descending probability and select the critical $L\%$-set $S^*$. For each configuration $(k_1, k_2, k_4)$ in $S^*$ one can then independently find the $M\%$ and $B\%$-critical sets of the underlying multinomial distributions. This can be done in many ways, see \textbf{Appendix}.
+Results \ref{Fine structure law} and \ref{Equatransneutronic Masses result} open up a new way to do calculations: using the approximation one reduces the complexity of Problem \ref{Problem of finding LFS_K configurations.} to that of studying $\mathbb{L}$. The {\it lucky law} is usually defined on a less dimensional space than $\MK$ and that significantly reduces the  computational effort. In proteomics, the state space of $\mathbb{L}$ can be thought to be two-dimensional, making it possible to establish the mass and probability of every {\it equatransneutronic grouping} in a {\it double for loop}. This approach is described as Algorithm \ref{DeFine code}, code-named \textsc{DeFine}. In general, exploration of $\mathbb{L}$ could be achieved by a tailored MCMC algorithm.   
 
-
-Having obtained the critical sets we calculate their exterior product and obtain a set of valid configurations in $LFS_K$. We calculate then their true probability under $\MK$ and their mass, $M$. The mass of a configuration is obtained with \eqref{Equatransneutronic masses eq}.  Finally, we merge all obtained solutions.
-
-We call the above algorithm {\sc DeFine}. A prototype of it has been implemented in \textbf{R}.	Fig. \ref{figure: Coverage} in  shows how well the prototype manages in solving Problem \ref{Problem of finding LFS_K configurations.}. Observe also, that the {\it for loop} can be carried out in parallel.
-
-Say that the algorithm resulted in set $A$ of configurations. One can measure \textsc{DeFiner}'s perfomance simply by calculating the overall $\textsc{Coverage} := \MK(A)$; the higher it is, the better we get in solving Problem \ref{Problem of finding LFS_K configurations.}.
-
-
-
-\begin{algorithm}\caption{\textsc{DeFiner}}
+\begin{algorithm}\caption{\textsc{DeFine}}\label{DeFine code}
 \begin{algorithmic}\label{DeFine Parallely}
+	\State	\textbf{Input:}\,\,\,\,\, \molecule, $K$
+	\State 	\textbf{Output:} A triplet of arrays with configurations, their probability, and mass.
+	\State 	Establish $\lambda_\cem{^{13}C}, \lambda_\cem{^{2} H}, \lambda_\cem{^{15}N}, \lambda_\cem{^{17}O}, \lambda_\cem{^{33}S}, \mu, \gamma $, and all mass differences $\Delta M$.
+	\State 	Find   $S = \{ (k_1, k_2, k_4) : k_1 + 2 k_2 + 4 k_4 = K \}$.
+	\FORALL{ $\bm{k} \in S$}
+		\State 	$\mathrm{Lucky}(\bm{k}) := \mathbb{L}\Big( \{ \bm{k} \} \Big)$
+		\State 	$M(\bm{k}) :=$ mass of configuration $\bm{k}$ obtained using Eq. \eqref{Equatransneutronic masses eq} 
+	\ENDFORALL
+	\State 	Return $\{ S, \mathrm{Lucky}, M\}$.
+\end{algorithmic}	
+\end{algorithm}
+
+\textsc{DeFine} can be used as a subroutine for \textsc{DeFiner}: an algorithm that provides the exact multinomial peaks. \textsc{DeFiner} works as follows. 
+
+First, having obtained the {\it lucky} configurations, we order them in descending $\mathbb{L}$-probability and select the critical $L\%$-set $S_L$ to trim out the asymptotically negligible configurations. To show it is so, let us introduce some extra notation
+\begin{equation}
+	\bm{g}_1 := (\cem{c_1}, \cem{h_1}, \cem{n_1}, \cem{o_1}, \cem{s_1} ), \quad
+	\bm{g}_2 := (\cem{o_2}, \cem{s_2}), \quad
+	g_4 := \cem{s_4}, \quad 
+	\bm{g} := ( \bm{g}_1, \bm{g}_2, g_4)
+\end{equation}
+We think of $\bm{g}_1$ and $\bm{g}_2$ as of configurations of the multinomial laws described in Result \ref{Fine structure law}. Observe that entries of $\bm{g}_i$ sum to $k_i$. By Result \ref{Fine structure law}, note that $\QK \big( S_L \big) \leq \QK \big( S \big) = \mathbb{L}\big( \{ \bm{k} \} \big)$, where $\bm{k} := (k_1, k_2, k_4)$, the probability of a peak in a given {\it equatransneutronic grouping} being smaller than the probability of all the peaks gathered in it. Therefore, assymptotically all the $\bm{g}$ configurations in $S_L$ have a small $\QK$-probability, and we can decide whether to neglect them using only the information contained in $\mathbb{L}\big( \{ \bm{k} \} \big)$.
+
+Subsequently, for each configuration $\bm{k}$ in $S_L$, one independently identifies critical $M\%$-set $\mathfrak{M}$ and critical $B\%$-set $\mathfrak{B}$ of the two underlying multinomial distributions. This can be achieved in many ways, see \textbf{Appendix} for our approach. With these sets at hand we calculate their exterior product and obtain a set of valid configurations from $LFS_K$. We then find their true $\MK$-probability and their mass $M$ using Eq. \eqref{Equatransneutronic masses eq}. We make use of \textsc{BRAIN} \cite{Dittwald2013BRAIN} software to get $\MM(LFS_K)$ needed to calculate $\MK$. Finally, we merge all obtained solutions.
+
+Say that the algorithm resulted in set $A$ of configurations. One can measure \textsc{DeFiner}'s performance simply by calculating the overall $\textsc{Coverage} := \MK(A)$; the higher it is, the better we are in solving Problem \ref{Problem of finding LFS_K configurations.}.
+
+A prototype of \textsc{DeFiner} has been implemented in \textbf{R}. Its pseudo code is described as Algorithm \ref{DeFiner code}. Observe also, that the {\it for loop} can be carried out in parallel. Fig. \ref{figure: Coverage} shows how well the prototype manages in solving Problem \ref{Problem of finding LFS_K configurations.}. 
+
+
+
+
+\begin{algorithm}\caption{\textsc{DeFiner}}\label{DeFiner code}
+\begin{algorithmic}
 	\State	\textbf{Input:} \molecule, $K, L, M, B$
-	\State 	\textbf{Output:} List of pairs (Probability, Mass ), Coverage.
-	\State 	Establish $\lambda_\cem{^{13}C}, \lambda_\cem{^{2} H}, \lambda_\cem{^{15}N}, \lambda_\cem{^{17}O}, \lambda_\cem{^{33}S}, \mu, \gamma $
-	\State 	Find  		$S = \{ (k_1, k_2, k_4) : k_1 + 2 k_2 + 4 k_4 = K \}$.
-	\State 	Find 		$P = \{ \prob(\bm{k}) : \bm{k} \in S \}$
-	\State 	Order $S$ using $P$ and select the top $L \%$. Call result $S^*$.
+	\State 	\textbf{Output:} array of masses and probabilities, \textsc{Coverage}.
+	\State 	Run \textsc{DeFine} and obtain $\{ S, \mathrm{Lucky}, M\}$.
+	\State 	$S_L$:= top $L\%$ of configurations from $S$ ordered by their {\it lucky probabilities}, $\mathbb{L}(\{ \bm{k} \})$.
 	
 
-	\FORALL{ $\bm{k} \in S^*$}
+	\FORALL{ $\bm{k} \in S_L$}
 		\State $\mathfrak{M}$ := Critical $M\%$ set of $\mathrm{Multi} \left(
 				\frac{ \lambda_\cem{^{13}C} }{ \mu }, 
 				\frac{ \lambda_\cem{^{2} H} }{ \mu }, 
@@ -41,27 +62,16 @@ Say that the algorithm resulted in set $A$ of configurations. One can measure \t
 			k_2	
 		\right)$		
 
-		% \State $\mathfrak{C} \,\,\,:= \mathfrak{M} \otimes \mathfrak{B} \otimes \{ k_4 \}$
-
-		\State 	Partial Result := {\small
-		\begin{equation*}
-				\Bigg\{ 
-						\Big( 
-							\MK ( \{\bm{x}, \bm{y}, z \}), 
-							M( \bm{x}, \bm{y}, z )
-						\Big) : \bm{x} = (\cem{c_1}, \cem{h_1}, \cem{n_1}, \cem{o_1}, \cem{s_1} ) \in \mathfrak{M},\quad \bm{y} = (\cem{o_2}, \cem{s_2}) \in \mathfrak{B},\quad z = \cem{s_4}  \Bigg\}			
-		\end{equation*}}
-		% \State 	Partial Result := 
-		% 	$\Bigg\{ 
-		% 		\Big( 
-		% 			\MK ( \{\bm{x}, \bm{y}, z \}), 
-		% 			M( \bm{x}, \bm{y}, z )
-		% 		\Big) : 
-		% 	$
-		% \State\quad$\bm{x} = (\cem{c_1}, \cem{h_1}, \cem{n_1}, \cem{o_1}, \cem{s_1} ) \in \mathfrak{M},\quad \bm{y} = (\cem{o_2}, \cem{s_2}) \in \mathfrak{B},\quad z = \cem{s_4}  \Bigg\}$
+		\State $\mathfrak{R}_{\bm{k}}$ := $ 
+			\Bigg\{ 
+				\Big( 
+					\MK( \bm{g} ), 
+					M( \bm{g} )
+				\Big) : \bm{g} = ( \bm{g}_1, \bm{g}_2, g_4 ) \in \mathfrak{M} \otimes \mathfrak{B} \otimes \{ k_4 \}  
+			\Bigg\}$, cf. Eq. \eqref{Equatransneutronic masses eq} 
 	\ENDFORALL
 
-	\State 	Result := $\bigcup $ Partial Results.
 	\State 	Find {\sc Coverage}.
+	\State 	Return $\big\{ \bigcup _{\bm{k}} \mathfrak{R}_{\bm{k}}, \textsc{Coverage} \big\}$.
 \end{algorithmic}	
 \end{algorithm}

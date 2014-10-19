@@ -1,61 +1,10 @@
 %!TEX root = ../DeGaulle.tex
 \section{Introduction}
 
-There are many reasons why mass spectrometry analysis is hard. It is hard in that there are potentially many many sources of interferences that can distort the information about the actual composition of a sample. The study of the nature of these interferences is needed to achieve the goal of making out of mass spectrometers yet more reliable an identification tool. 
+Recent advances in mass spectrometric technology allow for a more and more elaborate application in biology. It is being recognised that more precise information can be retrieved even from larger chemical compounds. More resolved spectra already now help in the identification of complex mixtures of biomolecules, such as proteins and peptides, nucleic acids, and drugs; see \cite{Milandanovic2012OnTheUtilityOfIsotopicFineStructure}. 
 
-Part of the noise in the mass to charge domain is innately related to the elements themeselves and stems from the existence of isotopes. It is because of them that a given analyte is represented as a series of peaks, a spectrum, rather that only one peak. The theoretical underpinnings of how to mathematically model the impact of isotopes are already well established, see \cite{Valkenborg2012Isotopic}. The main idea behind the model is to abstract from the exact positionings of the extra neutrons on a particular chemical compound and thus concentrate only on their relative amounts among all atoms of a given element. Assuming that the isotopic configurations are independent and follow the element dependent distribution, one arrives to the conclusion  that the correct law describing occurence of different isotopes in a chemical compound is the product of multinomial distributions. 
+It is well known that part of their complexity stems from the existence of stable isotopes. It is because of them that a given analyte is represented as a series of peaks, rather than just one corresponding to its monoisotopic mass. Depending on the machine, the isotopic structure can be resolved at different levels of accuracy. This provides a rationale for development of efficient algorithms that calculate their theoretical counterparts.
 
-There is one huge problem with that law: together with the growth of molecule one observes an exponential growth in the number of possibile isotope configurations, which precludes their direct enumeration. To solve this problem, different semplifications were proposed, amounting to different ways of binning configurations together explicitly \cite{Claesen2012Efficient}, by hiding them under the guise of Fourier Transform \cite{Rockwood1995Relationship}, or by \dots 
+In this paper we consider three basic levels of aggregation of the isotopic structure,  corresponding to three distinct levels of theoretical resolution: the most coarse clumps together peaks with the same additional nucleon count, cf. \cite{Kienitz1961MassSpectrometry}, the finer one distinguishes between the {\it equatransneutronic groupings}, see \cite{Olson2009Calculations}, while the finest one represents completely resolved isotopic configurations, see \cite{Rockwood1995Ultrahighspeed}. The theoretical underpinnings of how to mathematically model the impact of isotopes are already well established, see \cite{Valkenborg2012Isotopic}, and the probability of a given exact fine configuration can be obtained using the product of multinomial distributions. However, with the growth of molecule one observes a general rise in the complexity in the problem of enumerating all fine isotopic configurations. To bypass this problem, different simplifications were proposed, amounting to different ways of binning configurations together explicitly \cite{Claesen2012Efficient} or by hiding them under the guise of Fourier Transform \cite{Rockwood1995Relationship}. 
 
-\todo[inline]{However, it is considered of paramount importance in Mass Spectrometry to develop machines with still higher resolution powers and it is very likely that this trend will continue. Even today there are machines that already can distinguish peaks attributed to different configurations with the same number of extra neutrons.  }
-\todo[inline]{Add Olson and others but Olson above all.}
-
-Here we propose to approach the problem of fine structure so that it overcomes the shortcomings of the aggregate model, as used in \cite{Claesen2012Efficient}. That particular model bins together configurations having the same number of extra neutrons distributed on different atoms. For instance, if one considers water molecule \ce{H_2 O}, the model would glue together configuration with one extra neutron only on the first hydrogen togeter with that having it on the second together with that on oxygen atom. We devise an algorithm to deaggregate these probability clusters. We call the peaks obtained via that algorithm a {\it localised fine structure}. 
-
-
-What motivates the solution to this problem is a search for better molecule fingerprints. The development of new mass spectrometers capable of distinguishing differences in masses of neutrons is proceeding at a vigorous pace. Soon, scientists will face the need of more detailed models than those abstracting from mass defects. It is also common for chemists to search for presence of specific substance in the sample. Usually this is done by looking at some highly specific range in the mass domain of the gathered spectra. Our model provides deeper insight to what might happen while focussing on that particular bit of collected data: conditioning on configurations with the same number of extra neutrons translates directly into focussing in a specific region of the mass-to-charge domain.
-
-
-The algorithm assumes that one can easily find a peak not far from the most probable one and that the distribution is close to what one would call unimodal\footnote{We provide a precise definition of unimodality for discrete probability distributions in Section \dots} and that the most of distributions probability lies in a rather small neighbourhood of the mode. Both the guess about the starting point and the way the neighbourhood gets explored depend on the Poisson approximation to the distribution under study. To our best knowledge this type of approximation have not yet been used for algorithmic purposes. It has been used however in the context of proteomic and peptide research: in \cite{Breen2000AutomaticPeak} it is being used for high throughput protein identification; its use was revalidated in \cite{Valkenborg2007UsingPoisson} in case of peptides.
-
-
-We also observe that the use of Poisson approximation gives a theoretical explanation for the equatransneutronic binning used in \cite{Olson2009Calculations} and actually helps deaggregating results obtained using that approach as well.
-
-\todo[inline]{ Diophantine equations. }
-
-% For instance, by neglecting the fact that the mass of additional neutron with respect to the lightest isotope can discriminate between elements, one arrives at a probability distribution that is computationally tractable in different ways: either algebraically \cite{Claesen2012Efficient}, by use of Fourier Transform \cite{Rockwood1995Relationship}, dynamic programming , Li2008HierarchicalAlgorithm  
-
-
-% The main idea is to treat a chemical compound, such as \molecule, as a set of 
-
-% The problem is that usually a more detailed approach 
-
-% There is usually much of indeterminacy in the 
-% Part of the problem lies in the nature of chemical sound that prohibits us from getting to know the exact composition of an analyte under study. One must acknowledge also the fact, that part of indeterminacy in the obtained results stems from the existence of isotopes of different elements. Mass 
-
-% A result of a mass spectrometry experiment is usually a complicated spectrum 
-
-% The concept of isotopic structure is crucial for the proper interpretation of mass spectrometry spectra. 
-
-% The fact that the result of a mass spec analysis is usually an entire spectrum in the mass to charge domain rather than an individual peak can to some extent be attributed to the existance of the isotopic structure. 
-
-% Part of the indeterminacy in the mass to charge domain can be attributed to the existence of isotopes.
-
-% In this article we are asking ourselves a question of how to 
-
-% The interpretation of a mass spectrometry analysis is rarely trivial, the number of possible sources of  interferences being a very large one. Even a perfectly carried out experiment usually  
-
- % of a given analyte rarely does appear in mass spec spectra in form of a single peak and a lot of the indeterminacy in weight can be attributed to the existence of isotopes.  
-
-
-	% Cite all others.
-
-
-
-% One of the first uses of Poisson approximation in the context of isotopic structure calculations is to be found in \cite{Breen2000AutomaticPeak}, where it is being used for high throughput protein identification. The use of approximation was validated in \cite{Valkenborg2007UsingPoisson} in case of peptides. Authors of this article also raise the important topic of approximations validity, from a purely applied viewpoint. 
-
-
-
-
-
-% All interesting citations \cite{Claesen2012Efficient} and \cite{Valkenborg2012Isotopic} and \cite{Olson2009Calculations} and \cite{Ipsen2014Efficient} and \cite{Valkenborg2008ModelBased} and \cite{Valkenborg2007UsingPoisson} and \cite{Rockwood1995Relationship} and \cite{Breen2000AutomaticPeak}.
+Here we propose two refinements over the aggregate model, as used in \cite{Claesen2012Efficient}. Both of them use the concept of the {\it localised fine structure}, which corresponds to isotopic configurations clustered together into only one peak under the aggregate model. One of the devised algorithms extremely efficiently disaggregates that peak into {\it equatransneutronic groupings}; the other one fully resolves the isotopic pattern. Both of these algorithms are based on elegant Poisson approximations to the generally acknowledged multinomial model. To our best knowledge this type of approximation have not yet been used for algorithmic purposes. It has been used however in the context of proteomic and peptide research: in \cite{Breen2000AutomaticPeak} it was used for high throughput protein identification and then it was revalidated in \cite{Valkenborg2007UsingPoisson} for peptides. 
