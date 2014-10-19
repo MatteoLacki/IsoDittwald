@@ -5,14 +5,14 @@
 
 We want to prove that if $\mu^{[n]} \rightharpoonup \mu$ and $\mu^{[n]}(A), \mu(A) > 0$, then also $\mu^{[n]}_A \rightharpoonup \mu_A$. We do this under the assumption that both $\mu^{[n]}$ and $\mu$ are discrete measures on probability space $E$. 
 
-By the {\it Portmanteau Lemma}, see \cite{Kallenberg2002FoundationsOfModernProbability}, $\mu^{[n]} \rightharpoonup \mu$ implies that for any set $A$ with boundary $\partial A$ subject to $\mu( \partial A) = 0$, one should observe 
+By the {\it Portmanteau Lemma}, see \cite{Kallenberg2002FoundationsOfModernProbability}, $\mu^{[n]} \rightharpoonup \mu$ implies that for any set $A$ with boundry $\partial A$ subject to $\mu( \partial A) = 0$, one should observe 
 
 \begin{equation}\label{convergence in probability on good sets}
 	\lim_{n \to \infty} \mu^{[n]}(A) = \mu(A).
 \end{equation}
 
 
-The notion of boundary requires the notion of topology: thus, we decide on the discrete topology, which is natural in this context \footnote{For appropriate topological notions consult \cite{Dugundji1966Topology}.}. In this topology however, $\partial A = \emptyset$, for it is a set theoretical difference of the closure and the interior, both of which are equal to $A$. Hence, $\mu( \partial A) = 0$. Thus, \eqref{convergence in probability on good sets} always holds.
+The notion of boundry requires the notion of topology: thus, we decide on the discrete topology, which is natural in this context \footnote{For appropriate topological notions consult \cite{Dugundji1966Topology}.}. In this topology however, $\partial A = \emptyset$, for it is a set theoretical difference of the closure and the interior, both of which are equal to $A$. Hence, $\mu( \partial A) = 0$. Thus, \eqref{convergence in probability on good sets} always holds.
 
 {\it Ex definitione}, $\mu^{[n]} \rightharpoonup \mu$ means, that for any bounded function $f:E\to\mathbb{R}$ one observes
 \begin{equation}\label{weak convergence definition}
@@ -37,13 +37,13 @@ For \molecule, the parameters of the Diophantine equation defining $LFS_K$, see 
 		\prod_{i \in \mathcal{I}} \frac{ \mu_i^{k_i^*} }{ {k_i^*}! }	
 	},
 \end{equation*}
-where $\bm{k}$ is an ordered tuple indexed by $\mathcal{I}$. Nature poses a natural limit on the complexity of the {\it lucky law}, as at most  $\# \mathcal{I} \leq 10$. Observe also, that this law arises from conditioning a product of independent $\#\mathcal{I}$ Poisson distributions conditioned on the Diophantine equation $\sum_{i \in \mathcal{I}} i k_i^*  = K$.
+where $\bm{k}$ is an ordered tuple indexed by $\mathcal{I}$. Nature poses a natural limit on the complexity of the {\it lucky law}, as at most  $\# \mathcal{I} \leq 10$. Observe also, that this law arrises from conditioning a product of independent $\#\mathcal{I}$ Poisson distributions conditioned on the Diophantine equation $\sum_{i \in \mathcal{I}} i k_i^*  = K$.
 
 
 \subsection*{Obtaining $M\%$ critical sets of the Multinomial Distribution}
 
 Stating the algorithm requires some extra notation: let $\mathfrak{S}_k = \{ \bm{c} = (c_1, \dots, c_w) : \sum_{i=1}^w c_i = k, c_i \geq 0 \}$, a simple $k-$simplex, be the underlying state-space for the multinomial distribution, $\mathcal{M} := \mathrm{Multi}( p_1, \dots, p_w ; k)$. We can then consider a graph $G = (V,E)$, where the set of vertices $V \equiv \mathfrak{S}_k$ and with edges $E$ specified as follows: two configurations $\bm{a}, \bm{b} \in V$ form an edge $(\bm{a}, \bm{b}) \in E$ if and only if $\exists_{i,j \in \{ 1, \dots, w \}, i \not= j} a_i = b_i + 1$ and $a_j = b_j - 1$. 
 
-The algorithm amounts then to performing a controlled {\it breadth first search}. We start the search in the vicinity of $\mathcal{M}$'s mode, using as proxy point $\bm{c}$ with coordinates set as $ c_i := n p_i + 1$. More elaborate set of candidates can be used, see \cite{Gall2003DeterminationOfTheModesOfMultinomial}. We then enlists all $\bm{c}$'s neighbours and puts them altogether on a {\it max-priority queue}, see \cite{Cormen2001IntroductionToAlgorithms}. We then look at neighbours of the top-priority configuration, check their probability and enqueue them. In the meantime, we store information on the visited configurations in a hash table to avoid multiple visits to the same node. We collect information about the total probability of the already visited nodes and their number. We stop the algorithm as soon as the accumulated probability reaches a number greater than the prespecified threshold level $M$ or if the number of already observed peaks reaches a prespecified number, i.e. when there will be too many peaks.
+The algorithm amounts then to performing a controlled {\it breadth first search}. We start the search in the vicinity of $\mathcal{M}$'s mode, using as proxy point $\bm{c}$ with coordinates set as $ c_i := n p_i + 1$. More elaborate set of candidates can be used, see \cite{Gall2003DeterminationOfTheModesOfMultinomial}. We then enlists all $\bm{c}$'s neighbours and puts them altogether on a {\it max-priority queue}, see \cite{Cormen2001IntroductionToAlgorithms}. We then look at neighbours of the top-priority configuration, check their probabiliy and enqueue them. In the meantime, we store information on the visited configurations in a hash table to avoid multiple visits to the same node. We collect information about the total probability of the already visited nodes and their number. We stop the algorithm as soon as the accumulated probability reaches a number greater than the prespecified threshold level $M$ or if the number of already observed peaks reaches a prespecified number, i.e. when there will be too many peaks.
 
 Observe that in case of molecules containing elements with only one isotope, e.g. \smallMolecule, the above algorithm suffices to solve the Problem \ref{Problem of finding LFS_K configurations.}, as showed in Result \ref{Multinomial Result}.

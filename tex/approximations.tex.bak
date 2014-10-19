@@ -6,9 +6,9 @@ By an isotopic configuration we understand information on numbers of different i
 	\text{\moleculeIsotopic}.
 \end{equation}
 
-In the above representation, small letters with indices represent counts of different atoms with indices displaying the number of additional neutrons an isotope has with respect to the lightest possible isotopic variant. 
+In the above representation, small letters with indices represent counts of different atoms with indices displaying the number of additional neutrons an isotope has with respect to the lighest possible isotopic variant. 
 
-Rather than \eqref{long chemical formula}, we shall be using an equivalent probabilistic notation, treating upper case letters, like \ce{^{12}C}, as random variables and considering small case letters, $\cem{c_0}$, to be their realizations. An expression like $A = \{ \ce{^{13}C} = \cem{c_1},\, \ce{^{2}H} = \cem{h_1} \}$ is shorthand for saying: let us focus on all configurations \eqref{long chemical formula} that have \ce{c_1} heavy carbons and \ce{h_1} deuters in total.
+Rather than \eqref{long chemical formula}, we shall be using an equivalent probabilistic notation, treating upper case letters, like \ce{^{12}C}, as random variables and considering small case letters, $\cem{c_0}$, to be their realisations. An expression like $A = \{ \ce{^{13}C} = \cem{c_1},\, \ce{^{2}H} = \cem{h_1} \}$ is shorthand for saying: let us focus on all configurations \eqref{long chemical formula} that have \ce{c_1} heavy carbons and \ce{h_1} deuters in total.
 
 
 Following \cite{Kienitz1961MassSpectrometry}, one assumes that the law of vector
@@ -85,7 +85,7 @@ Nonetheless, since configurations in $LFS_K$ are naturally prioritized by probab
 In statistical terms, we are interested in approximating some critical set of large probability, as measured by the {\it Law of Localised Fine Structure}. 
 
 
-Why should one study law described by \eqref{problem equation} in the first place? Simply because the masses of different configurations in $LFS_K$ concentrate around the compound's monoisotopic mass shifted to the right by $K$ Da; c.f \cite{Hughey2001KendrickMassDefect}. For medium sized compounds, $LFS_K$'s for different $K$ should in principle form disjoint clusters in the mass to charge domain, with some interference for bigger compounds. Studying $LFS_K$ guarantees exploration of a precise region in the mass to charge domain.
+Why should one study law described by \eqref{problem equation} in the first place? Simply because the masses of different configurations in $LFS_K$ concentrate around the compound's monoisotopic mass shifted to the right by $K$ Daltons; c.f \cite{Hughey2001KendrickMassDefect}. For medium sized compounds, $LFS_K$'s for different $K$ should in principle form disjoint clusters in the mass to charge domain, with some interference for bigger compounds. Studying $LFS_K$ guarantees exploration of a precise region in the mass to charge domain.
 
 
 To solve Problem \ref{Problem of finding LFS_K configurations.} we approximate measure $\MK$ by a more analytically tractable measure $\QK$ defined on the $LFS_K$. We then devise an algorithm to find a possibly small set of configurations $B^* \subset LFS_K$, s.t. $\QK (B^*) \approx 1$. Since $\QK \approx \MK$, so $\MK (B^*) \approx 1$ and $B^*$ solves Problem \ref{Problem of finding LFS_K configurations.}, possibly suboptimally.
@@ -191,7 +191,7 @@ Suppose that we concentrated on molecules composed entirely of elements that can
 	The corresponding Diophantine equation is $\cem{^{13}C} + \cem{^2H} + \cem{^{15}N} = K$.
 \end{proof}
 
-It is valuable to see, how Lemma \ref{Poisson conditional on sum of Poissons} generalizes while conditioning on a more complex Diophantine equation. Observe, that we can rewrite the definition of $LFS_K$ emphasizing the {\it equatransneutronic grouping}, i.e. gluing together counts of configurations with the same numbers of extra neutrons,
+It is valuable to see, how Lemma \ref{Poisson conditional on sum of Poissons} generalizes while conditioning on a more complex Diophantine equation. Observe, that we can rewrite the definition of $LFS_K$ emphasizing the {\it equatransneutronic grouping}, i.e. glueing together counts of configurations with the same numbers of extra neutrons,
 \begin{equation*}
 	LFS_K = \Big\{ \underbrace{\cem{^{13}C} + \cem{^2H} + \cem{^{15}N} + \cem{^{17}O} + \cem{^{33}S}}_{ G_1 } + \,2 \times \underbrace{( \cem{^{18}O} + \cem{^{34}S} )}_{ G_2 } + \,4 \times \underbrace{\cem{^{36}S}}_{ G_4 } = K \Big\},	
 \end{equation*}
@@ -210,7 +210,7 @@ To calculate $\QK$ it remains to divide expression \eqref{QK Nominator} by $\QQ(
 % In \cite{Olson2009Calculations} they are encoded by $k_1, k_2$, and $k_4$; also, $d_{G_i} = i$. Then it is true that
 
 \begin{result}\label{Fine structure law}
-	The approximate \emph{fine structure law} with $K$ additional neutrons for \molecule\, is equal to 
+	The approximative \emph{fine structure law} with $K$ additional neutrons for \molecule\, is equal to 
 	{\small
 		\begin{equation*}
 			\mathrm{Multi} \left(
@@ -241,12 +241,12 @@ To calculate $\QK$ it remains to divide expression \eqref{QK Nominator} by $\QQ(
 	\end{equation}
 \end{result}
 
-Otherwise stated, the approximate distribution is a mixture of independent multinomial distributions weighted by the $\mathbb{L}$ distribution, which, for lack of name, we shall call the {\it lucky law}. Under the Poisson approximation, the {\it lucky law} is the resulting law on the {\it equatransneutronic configurations}. General expression is to be found in the \textbf{Appendix}.
+Otherwise stated, the approximative distribution is a mixture of independent multinomial distributions weighted by the $\mathbb{L}$ distribution, which, for lack of name, we shall call the {\it lucky law}. Under the Poisson approximation, the {\it lucky law} is the resulting law on the {\it equatransneutronic configurations}. General expression is to be found in the \textbf{Appendix}.
 
 As pointed out in \cite{Olson2009Calculations}, it is of interest to calculate also the masses of the 
 {\it equatransneutronic groups}. With Result \ref{Fine structure law}, we can provide extremely tractable approximations thereof. 
 \begin{result}\label{Equatransneutronic Masses result}
-	The approximate mass of a \emph{ transneutronic group} $(k_1, k_2, k_4)$ for compound \molecule\, is equal to
+	The approximative mass of a \emph{ transneutronic group} $(k_1, k_2, k_4)$ for compound \molecule\, is equal to
 	{\small
 		\begin{equation}\label{Equatransneutronic masses eq}
 		\begin{gathered}
