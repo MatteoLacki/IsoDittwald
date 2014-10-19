@@ -1,10 +1,10 @@
 %!TEX root = ../DeGaulle.tex
 \section{Algorithms}
 
-Results \ref{Fine structure law} and \ref{Equatransneutronic Masses result} open up a new way to do calculations: using the approximation one reduces the complexity of Problem \ref{Problem of finding LFS_K configurations.} to that of studying $\mathbb{L}$. The {\it lucky law} is usually defined on a less dimensional space than $\MK$ and that significantly reduces the  computational effort. In proteomics, the state space of $\mathbb{L}$ can be thought to be two-dimensional, making it possible to establish the mass and probability of every {\it equatransneutronic grouping} in a {\it double for loop}. This approach is described as Algorithm \ref{DeFine code}, code-named \textsc{DeFine}. In general, exploration of $\mathbb{L}$ could be achieved by a tailored MCMC algorithm.   
+Results \ref{Fine structure law} and \ref{Equatransneutronic Masses result} open up a new way to do calculations: using the approximation one reduces the complexity of Problem \ref{Problem of finding LFS_K configurations.} to that of studying $\mathbb{L}$. The {\it lucky law} is usually defined on a less dimensional space than $\MK$ and that significantly reduces the  computational effort. In proteomics, the state space of $\mathbb{L}$ can be thought to be two-dimensional, making it possible to establish the mass and probability of every {\it equatransneutronic grouping} in a {\it double for loop}. This approach is described as Algorithm \ref{DeFiner code}, code-named \textsc{DeFiner}. In general, exploration of $\mathbb{L}$ could be achieved by a tailored MCMC algorithm.   
 
-\begin{algorithm}\caption{\textsc{DeFine}}\label{DeFine code}
-\begin{algorithmic}\label{DeFine Parallely}
+\begin{algorithm}\caption{\textsc{DeFiner}}\label{DeFiner code}
+\begin{algorithmic}\label{DeFiner Parallely}
 	\State	\textbf{Input:}\,\,\,\,\, \molecule, $K$
 	\State 	\textbf{Output:} A triplet of arrays with configurations, their probability, and mass.
 	\State 	Establish $\lambda_\cem{^{13}C}, \lambda_\cem{^{2} H}, \lambda_\cem{^{15}N}, \lambda_\cem{^{17}O}, \lambda_\cem{^{33}S}, \mu, \gamma $, and all mass differences $\Delta M$.
@@ -17,7 +17,7 @@ Results \ref{Fine structure law} and \ref{Equatransneutronic Masses result} open
 \end{algorithmic}	
 \end{algorithm}
 
-\textsc{DeFine} can be used as a subroutine for \textsc{DeFiner}: an algorithm that provides the exact multinomial peaks. \textsc{DeFiner} works as follows. 
+\textsc{DeFiner} can be used as a subroutine for \textsc{DeFinest}: an algorithm that provides the exact multinomial peaks. \textsc{DeFinest} works as follows. 
 
 First, having obtained the {\it lucky} configurations, we order them in descending $\mathbb{L}$-probability and select the critical $L\%$-set $S_L$ to trim out the asymptotically negligible configurations. To show it is so, let us introduce some extra notation
 \begin{equation}
@@ -30,18 +30,18 @@ We think of $\bm{g}_1$ and $\bm{g}_2$ as of configurations of the multinomial la
 
 Subsequently, for each configuration $\bm{k}$ in $S_L$, one independently identifies critical $M\%$-set $\mathfrak{M}$ and critical $B\%$-set $\mathfrak{B}$ of the two underlying multinomial distributions. This can be achieved in many ways, see \textbf{Appendix} for our approach. With these sets at hand we calculate their exterior product and obtain a set of valid configurations from $LFS_K$. We then find their true $\MK$-probability and their mass $M$ using Eq. \eqref{Equatransneutronic masses eq}. We make use of \textsc{BRAIN} \cite{Dittwald2013BRAIN} software to get $\MM(LFS_K)$ needed to calculate $\MK$. Finally, we merge all obtained solutions.
 
-Say that the algorithm resulted in set $A$ of configurations. One can measure \textsc{DeFiner}'s performance simply by calculating the overall $\textsc{Coverage} := \MK(A)$; the higher it is, the better we are in solving Problem \ref{Problem of finding LFS_K configurations.}.
+Say that the algorithm resulted in set $A$ of configurations. One can measure \textsc{DeFinest}'s performance simply by calculating the overall $\textsc{Coverage} := \MK(A)$; the higher it is, the better we are in solving Problem \ref{Problem of finding LFS_K configurations.}.
 
-A prototype of \textsc{DeFiner} has been implemented in \textbf{R}. Its pseudo code is described as Algorithm \ref{DeFiner code}. Observe also, that the {\it for loop} can be carried out in parallel. Fig. \ref{figure: Coverage} shows how well the prototype manages in solving Problem \ref{Problem of finding LFS_K configurations.}. 
-
-
+A prototype of \textsc{DeFinest} has been implemented in \textbf{R}. Its pseudo code is described as Algorithm \ref{DeFinest code}. Observe also, that the {\it for loop} can be carried out in parallel. Fig. \ref{figure: Coverage} shows how well the prototype manages in solving Problem \ref{Problem of finding LFS_K configurations.}. 
 
 
-\begin{algorithm}\caption{\textsc{DeFiner}}\label{DeFiner code}
+
+
+\begin{algorithm}\caption{\textsc{DeFinest}}\label{DeFinest code}
 \begin{algorithmic}
 	\State	\textbf{Input:} \molecule, $K, L, M, B$
 	\State 	\textbf{Output:} array of masses and probabilities, \textsc{Coverage}.
-	\State 	Run \textsc{DeFine} and obtain $\{ S, \mathrm{Lucky}, M\}$.
+	\State 	Run \textsc{DeFiner} and obtain $\{ S, \mathrm{Lucky}, M\}$.
 	\State 	$S_L$:= top $L\%$ of configurations from $S$ ordered by their {\it lucky probabilities}, $\mathbb{L}(\{ \bm{k} \})$.
 	
 

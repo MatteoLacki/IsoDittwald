@@ -1,16 +1,16 @@
 %!TEX root = ../DeGaulle.tex
 \section{Conclusions}
 
-	In the present paper an original approach to doing calculations on different levels of isotopic fine structure aggregation hierarchy was proposed. To our best knowledge, it is the first use of Poisson approximation for algorithmic purposes,   resulting already in two elegant algorithms, \textsc{DeFine} and \textsc{DeFiner}, for efficient exploration of the state space of possible isotopic configurations.  
+	In the present paper an original approach to doing calculations on different levels of isotopic fine structure aggregation hierarchy was proposed. To our best knowledge, it is the first use of Poisson approximation for algorithmic purposes,   resulting already in two elegant algorithms, \textsc{DeFiner} and \textsc{DeFinest}, for efficient exploration of the state space of possible isotopic configurations.  
 
-	\textsc{DeFine} presents a minimalist, yet extremely efficient way to calculate the approximate probabilities of {\it equatransneutronic} clusters. \textsc{DeFiner} presents a simple, yet certainly suboptimal way of handing Problem \ref{Problem of finding LFS_K configurations.}; however, more efficient algorithms can easily come into being by more careful considerations on the structure of approximate distribution $\QK$. 
+	\textsc{DeFiner} presents a minimalist, yet extremely efficient way to calculate the approximate probabilities of {\it equatransneutronic} clusters. \textsc{DeFinest} presents a simple, yet certainly suboptimal way of handing Problem \ref{Problem of finding LFS_K configurations.}; however, more efficient algorithms can easily come into being by more careful considerations on the structure of approximate distribution $\QK$. 
 
 	Figure \ref{figure: hierarchy} presents a detailed view of the hierarchical approach we take. The left pane contains the  aggregated isotopic distribution of \testAvergine, an $100$-avergine, obtained with the {\sc BRAIN} algorithm \cite{Dittwald2013BRAIN}. The lower panel zooms into the region of the highest aggregated peak. This peak is then disaggregated into {\it equatransneutronic} groupings. Finally, one notices many small black peaks corresponding to the finest structure obtainable. It is by clustering and statistical centroiding of these peaks that one obtains all the others. 
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=\textwidth]{./img/hierarchyHorizontal}
- \caption{ Peaks in the left pane are probabilities of different $LFS_K$ groups, $K = 0,\dots,13$. In the right pane masses of configurations in $LFS_6$ are plotted: it zooms the region around the tallest peak in the left pane, which is also plotted there for reference. By appropriately aggregating \textsc{DeFiner}'s results, i.e. small black peaks, we calculate the {\it equatransneutronic} precise, non-approximated probabilities, in blue. We compare them with \textsc{DeFine}'s results obtained {\it via} the Poisson approximation, in green. There are no apparent differences between them. }
+ \caption{ Peaks in the left pane are probabilities of different $LFS_K$ groups, $K = 0,\dots,13$. In the right pane masses of configurations in $LFS_6$ are plotted: it zooms the region around the tallest peak in the left pane, which is also plotted there for reference. By appropriately aggregating \textsc{DeFinest}'s results, i.e. small black peaks, we calculate the {\it equatransneutronic} precise, non-approximated probabilities, in blue. We compare them with \textsc{DeFiner}'s results obtained {\it via} the Poisson approximation, in green. There are no apparent differences between them. }
  \label{figure: hierarchy}
 \end{figure}
 
